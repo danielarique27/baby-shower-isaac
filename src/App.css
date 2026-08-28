@@ -1,0 +1,1267 @@
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+}
+
+.invitation {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+}
+
+
+/* =========================================
+   SOBRE
+========================================= */
+
+.envelope-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dceaf5 0%,
+      #f0e8da 100%
+    );
+
+  cursor: pointer;
+}
+
+.envelope-container {
+  width: min(88vw, 420px);
+  position: relative;
+}
+
+.envelope {
+  width: 100%;
+  aspect-ratio: 1.55 / 1;
+  position: relative;
+  overflow: hidden;
+
+  background: #d7ebf5;
+
+  border-radius: 18px;
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 24px 60px
+    rgba(90, 143, 168, 0.3);
+}
+
+.envelope-left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+
+  border-top:
+    clamp(90px, 20vw, 130px)
+    solid transparent;
+
+  border-bottom:
+    clamp(90px, 20vw, 130px)
+    solid transparent;
+
+  border-left:
+    clamp(180px, 44vw, 210px)
+    solid #c4dfec;
+}
+
+.envelope-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+
+  border-top:
+    clamp(90px, 20vw, 130px)
+    solid transparent;
+
+  border-bottom:
+    clamp(90px, 20vw, 130px)
+    solid transparent;
+
+  border-right:
+    clamp(180px, 44vw, 210px)
+    solid #c4dfec;
+}
+
+.envelope-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 58%;
+
+  background: #d0e7f2;
+
+  clip-path:
+    polygon(
+      0 0,
+      50% 75%,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 65%;
+
+  background: #b9d9e8;
+
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      50% 82%
+    );
+
+  z-index: 3;
+}
+
+.envelope-seal {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  width:
+    clamp(48px, 14vw, 65px);
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #7ab3cc;
+
+  color: white;
+
+  font-size:
+    clamp(22px, 6vw, 32px);
+
+  z-index: 5;
+
+  box-shadow:
+    0 6px 20px
+    rgba(70, 120, 145, 0.3);
+}
+
+.envelope-text {
+  text-align: center;
+
+  margin-top:
+    clamp(55px, 14vw, 75px);
+}
+
+.envelope-text h2 {
+  margin: 0;
+
+  font-family:
+    "Dancing Script",
+    cursive;
+
+  font-size:
+    clamp(1.5rem, 7vw, 2rem);
+
+  color: #5a8fa8;
+}
+
+.envelope-text p {
+  margin-top: 6px;
+
+  font-size:
+    clamp(.65rem, 2.5vw, .8rem);
+
+  color: #6f8795;
+}
+
+
+/* =========================================
+   PÁGINA
+========================================= */
+
+.page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background: #f9fbfc;
+}
+
+
+/* =========================================
+   FONDO DECORATIVO
+========================================= */
+
+.decorative-background {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+
+  background-position:
+    center center;
+
+  background-size:
+    cover;
+
+  opacity: .18;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.content {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.section {
+  width: 100%;
+
+  min-height: 100svh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  position: relative;
+
+  text-align: center;
+
+  padding:
+    50px 20px;
+}
+
+
+/* =========================================
+   TARJETAS
+   MISMO ANCHO
+========================================= */
+
+.cover-content,
+.second-content,
+.third-content {
+  width: min(90vw, 650px);
+
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  background:
+    rgba(255, 255, 255, .92);
+
+  border-radius:
+    clamp(20px, 5vw, 40px);
+
+  box-shadow:
+    0 15px 50px
+    rgba(90, 143, 168, .12);
+
+  backdrop-filter:
+    blur(3px);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   PRIMERA SECCIÓN
+========================================= */
+
+.section-cover {
+  min-height: 100svh;
+
+  padding:
+    30px 20px;
+}
+
+.cover-content {
+  padding:
+    clamp(25px, 5vw, 50px)
+    clamp(20px, 6vw, 60px);
+}
+
+.cover-bear {
+  display: block;
+
+  width: 180px;
+
+  max-width: 45vw;
+
+  height: auto;
+
+  margin:
+    0 auto 5px;
+
+  object-fit: contain;
+
+  position: relative;
+
+  z-index: 4;
+}
+
+.stars {
+  color: #a8c8de;
+
+  font-size:
+    clamp(12px, 3vw, 20px);
+
+  letter-spacing: 8px;
+
+  margin-bottom: 15px;
+}
+
+.cover-content h1 {
+  margin: 0;
+
+  font-family:
+    "Dancing Script",
+    cursive;
+
+  font-size:
+    clamp(3rem, 13vw, 5.5rem);
+
+  line-height: 1;
+
+  color: #5a8fa8;
+}
+
+.divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width:
+    min(320px, 70vw);
+
+  margin:
+    clamp(20px, 5vw, 35px)
+    auto;
+}
+
+.divider span:not(.heart) {
+  height: 1px;
+
+  flex: 1;
+
+  background: #b8d8ea;
+}
+
+.heart {
+  color: #7ab3cc;
+
+  font-size: 14px;
+}
+
+.message {
+  margin:
+    0 auto;
+
+  max-width: 520px;
+
+  font-size:
+    clamp(.95rem, 3.5vw, 1.25rem);
+
+  line-height: 1.9;
+
+  color: #4a6070;
+}
+
+.parents {
+  margin-top:
+    clamp(35px, 8vw, 60px);
+}
+
+.parents span {
+  display: block;
+
+  text-transform: uppercase;
+
+  letter-spacing: .2em;
+
+  font-size:
+    clamp(.6rem, 2vw, .8rem);
+
+  color: #8aafc4;
+}
+
+.parents h2 {
+  margin:
+    8px 0 0;
+
+  font-family:
+    "Dancing Script",
+    cursive;
+
+  font-size:
+    clamp(2rem, 8vw, 3.5rem);
+
+  color: #2e6880;
+}
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 25px;
+
+  color: #8aafc4;
+
+  font-size: 26px;
+
+  z-index: 4;
+
+  animation:
+    bounce 2s infinite;
+}
+
+
+/* =========================================
+   SEGUNDA SECCIÓN
+========================================= */
+
+.section-second {
+  min-height: 100svh;
+
+  padding:
+    35px 20px;
+}
+
+.second-content {
+  padding:
+    clamp(30px, 5vw, 50px)
+    clamp(25px, 6vw, 60px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.invitation-message {
+  margin:
+    3px auto 0;
+
+  max-width: 500px;
+
+  font-family:
+    "Dancing Script",
+    cursive;
+
+  font-size:
+    clamp(1.5rem, 5vw, 2.2rem);
+
+  line-height: 1.35;
+
+  color: #b08a5a;
+}
+
+.baby-name {
+  margin:
+    8px 0 18px;
+
+  font-family:
+    "Dancing Script",
+    cursive;
+
+  font-size:
+    clamp(3.8rem, 13vw, 6rem);
+
+  line-height: 1;
+
+  color: #2e6880;
+
+  font-weight: 700;
+
+  letter-spacing: .04em;
+}
+
+
+/* =========================================
+   ECOGRAFÍA
+========================================= */
+
+.eco-container {
+  width:
+    min(75vw, 350px);
+
+  max-height:
+    40vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    rgba(245, 248, 250, .5);
+
+  box-shadow:
+    0 10px 30px
+    rgba(90, 143, 168, .10);
+}
+
+.eco-image {
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  max-height: 40vh;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   FECHA
+========================================= */
+
+.event-date {
+  width: 100%;
+
+  margin-top: 16px;
+
+  text-align: center;
+}
+
+.date-line {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  width:
+    min(220px, 65vw);
+
+  margin:
+    0 auto 7px;
+}
+
+.date-line span:not(.date-heart) {
+  height: 1px;
+
+  flex: 1;
+
+  background: #b8d8ea;
+}
+
+.date-heart {
+  color: #7ab3cc;
+
+  font-size: 11px;
+}
+
+.date-main {
+  font-family:
+    "Nunito",
+    sans-serif;
+
+  font-size:
+    clamp(.75rem, 3vw, 1rem);
+
+  font-weight: 800;
+
+  letter-spacing: .12em;
+
+  color: #5a8fa8;
+
+  white-space: nowrap;
+}
+
+.event-time {
+  display: inline-block;
+
+  margin-top: 6px;
+
+  padding:
+    4px 14px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(220, 234, 245, .55);
+
+  color: #2e6880;
+
+  font-family:
+    "Nunito",
+    sans-serif;
+
+  font-size:
+    clamp(.7rem, 2.5vw, .85rem);
+
+  font-weight: 700;
+
+  letter-spacing: .06em;
+}
+
+.second-decoration {
+  margin-top: 16px;
+
+  color: #7ab3cc;
+
+  letter-spacing: 8px;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   TERCERA SECCIÓN
+========================================= */
+
+.section-third {
+  min-height: 100svh;
+
+  padding:
+    35px 20px 60px;
+}
+
+.third-content {
+  padding:
+    clamp(30px, 5vw, 50px)
+    clamp(25px, 6vw, 60px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   CUENTA REGRESIVA
+========================================= */
+
+.countdown-title {
+  margin: 0;
+
+  font-family:
+    "Dancing Script",
+    cursive;
+
+  font-size:
+    clamp(2.5rem, 9vw, 4rem);
+
+  line-height: 1;
+
+  color: #5a8fa8;
+}
+
+.countdown-subtitle {
+  margin:
+    10px 0 25px;
+
+  color: #6f8795;
+
+  font-size:
+    clamp(.8rem, 2.8vw, 1rem);
+}
+
+.countdown {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    clamp(6px, 2vw, 14px);
+
+  margin: 0 auto;
+}
+
+.countdown-item {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    clamp(10px, 3vw, 18px)
+    5px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(220, 234, 245, .55);
+
+  border:
+    1px solid
+    rgba(184, 216, 234, .6);
+}
+
+.countdown-number {
+  font-family:
+    "Nunito",
+    sans-serif;
+
+  font-size:
+    clamp(1.4rem, 6vw, 2.4rem);
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  color: #2e6880;
+}
+
+.countdown-label {
+  margin-top: 6px;
+
+  font-size:
+    clamp(.5rem, 2vw, .72rem);
+
+  color: #7b8f9b;
+
+  text-transform: uppercase;
+
+  letter-spacing: .08em;
+}
+
+
+/* =========================================
+   DIVISOR
+========================================= */
+
+.third-divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width:
+    min(300px, 70vw);
+
+  margin:
+    30px auto 25px;
+
+  color: #7ab3cc;
+}
+
+.third-divider span:not(:nth-child(2)) {
+  height: 1px;
+
+  flex: 1;
+
+  background: #b8d8ea;
+}
+
+
+/* =========================================
+   UBICACIÓN + REGALOS
+========================================= */
+
+.bottom-options {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    clamp(15px, 3vw, 30px);
+
+  align-items: start;
+}
+
+.option-card {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.option-title {
+  margin: 0;
+
+  font-family:
+    "Dancing Script",
+    cursive;
+
+  font-size:
+    clamp(1.5rem, 4.5vw, 2.2rem);
+
+  line-height: 1.1;
+
+  color: #5a8fa8;
+}
+
+.location-address {
+  margin:
+    8px 0 15px;
+
+  color: #4a6070;
+
+  font-size:
+    clamp(.68rem, 2vw, .85rem);
+
+  line-height: 1.5;
+}
+
+.location-link,
+.gift-link {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-decoration: none;
+
+  color: #2e6880;
+
+  font-weight: 700;
+
+  font-size:
+    clamp(.65rem, 2vw, .8rem);
+}
+
+.location-image {
+  display: block;
+
+  width:
+    min(100%, 220px);
+
+  height: 130px;
+
+  object-fit: contain;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(90, 143, 168, .15);
+
+  transition:
+    transform .25s ease;
+}
+
+.location-link:hover .location-image {
+  transform: scale(1.03);
+}
+
+.location-link span,
+.gift-link span {
+  margin-top: 8px;
+}
+
+.gift-subtitle {
+  margin:
+    8px 0 15px;
+
+  color: #6f8795;
+
+  font-size:
+    clamp(.65rem, 2vw, .8rem);
+
+  line-height: 1.5;
+}
+
+.gift-image {
+  display: block;
+
+  width:
+    min(100%, 170px);
+
+  height: 130px;
+
+  object-fit: contain;
+
+  border-radius: 15px;
+
+  transition:
+    transform .25s ease;
+}
+
+.gift-link:hover .gift-image {
+  transform: scale(1.04);
+}
+
+.third-decoration {
+  margin-top: 28px;
+
+  color: #7ab3cc;
+
+  letter-spacing: 8px;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   ANIMACIÓN
+========================================= */
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 480px) {
+
+  /* TARJETAS */
+
+  .cover-content,
+  .second-content,
+  .third-content {
+    width: 92vw;
+    max-width: 92vw;
+  }
+
+
+  /* PRIMERA */
+
+  .cover-content {
+    padding:
+      22px 18px 30px;
+  }
+
+  .cover-bear {
+    width: 145px;
+    max-width: 42vw;
+  }
+
+  .stars {
+    margin-bottom: 8px;
+    letter-spacing: 5px;
+  }
+
+  .message {
+    line-height: 1.65;
+    font-size: .88rem;
+  }
+
+  .parents {
+    margin-top: 25px;
+  }
+
+  .parents h2 {
+    font-size: 2.2rem;
+  }
+
+
+  /* SEGUNDA */
+
+  .second-content {
+    padding:
+      25px 18px 28px;
+  }
+
+  .invitation-message {
+    font-size: 1.35rem;
+    line-height: 1.45;
+  }
+
+  .baby-name {
+    font-size: 3.8rem;
+
+    margin:
+      8px 0 16px;
+  }
+
+  .eco-container {
+    width: 78vw;
+
+    max-height: 35vh;
+
+    border-radius: 15px;
+  }
+
+  .eco-image {
+    max-height: 35vh;
+  }
+
+  .event-date {
+    margin-top: 14px;
+  }
+
+  .date-main {
+    font-size: .7rem;
+    letter-spacing: .07em;
+  }
+
+  .event-time {
+    margin-top: 5px;
+
+    padding:
+      4px 12px;
+
+    font-size: .68rem;
+  }
+
+
+  /* TERCERA */
+
+  .section-third {
+    padding:
+      30px 15px 50px;
+  }
+
+  .third-content {
+    padding:
+      28px 16px 30px;
+  }
+
+  .countdown-title {
+    font-size: 2.8rem;
+  }
+
+  .countdown-subtitle {
+    margin-bottom: 20px;
+  }
+
+  .countdown {
+    gap: 5px;
+  }
+
+  .countdown-item {
+    padding:
+      10px 3px;
+
+    border-radius: 12px;
+  }
+
+  .countdown-number {
+    font-size: 1.35rem;
+  }
+
+  .countdown-label {
+    font-size: .48rem;
+    letter-spacing: .04em;
+  }
+
+  .third-divider {
+    margin:
+      24px auto 20px;
+  }
+
+
+  /* UBICACIÓN + REGALOS */
+
+  .bottom-options {
+    gap: 10px;
+  }
+
+  .option-title {
+    font-size: 1.45rem;
+  }
+
+  .location-address {
+    font-size: .62rem;
+    margin-bottom: 10px;
+  }
+
+  .gift-subtitle {
+    font-size: .62rem;
+    margin-bottom: 10px;
+  }
+
+  .location-image,
+  .gift-image {
+    width: 100%;
+    height: 100px;
+  }
+
+  .location-link,
+  .gift-link {
+    font-size: .6rem;
+  }
+
+  .location-link span,
+  .gift-link span {
+    margin-top: 6px;
+  }
+
+  .third-decoration {
+    margin-top: 20px;
+  }
+}
+
+
+/* =========================================
+   PANTALLAS BAJAS
+========================================= */
+
+@media (max-height: 650px) {
+
+  .cover-content {
+    padding:
+      16px 20px 22px;
+  }
+
+  .cover-bear {
+    width: 115px;
+  }
+
+  .stars {
+    margin-bottom: 5px;
+  }
+
+  .divider {
+    margin:
+      10px auto;
+  }
+
+  .message {
+    line-height: 1.45;
+  }
+
+  .parents {
+    margin-top: 18px;
+  }
+
+  .second-content {
+    padding:
+      25px 20px;
+  }
+
+  .eco-container {
+    max-height: 32vh;
+  }
+
+  .eco-image {
+    max-height: 32vh;
+  }
+
+  .third-content {
+    padding:
+      25px 20px 30px;
+  }
+
+  .countdown-subtitle {
+    margin-bottom: 15px;
+  }
+
+  .third-divider {
+    margin:
+      20px auto;
+  }
+}
+
+
+/* =========================================
+   TABLET / COMPUTADOR
+========================================= */
+
+@media (min-width: 481px) {
+
+  .bottom-options {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
