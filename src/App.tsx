@@ -4,6 +4,7 @@ import oso2 from "@/imports/oso2.png";
 import eco from "@/imports/eco.png";
 import ubicacion from "@/imports/ubicacion.png";
 import regalo from "@/imports/regalo.png";
+import octubre from "@/imports/octubre.png";
 import "./App.css";
 
 function App() {
@@ -41,12 +42,12 @@ function App() {
 
       const hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) /
-          (1000 * 60 * 60)
+        (1000 * 60 * 60)
       );
 
       const minutes = Math.floor(
         (distance % (1000 * 60 * 60)) /
-          (1000 * 60)
+        (1000 * 60)
       );
 
       const seconds = Math.floor(
@@ -75,12 +76,12 @@ function App() {
     setOpened(true);
 
     if (!audioRef.current) {
-      audioRef.current = new Audio(
-        "/music/indigo.mp3"
-      );
-
-      audioRef.current.loop = true;
-      audioRef.current.volume = 0.45; 
+      /*    audioRef.current = new Audio(
+           "/music/indigo.mp3"
+         );
+   
+         audioRef.current.loop = true;
+         audioRef.current.volume = 0.45; */
     }
 
     audioRef.current.play().catch(() => {
@@ -258,7 +259,7 @@ function App() {
 
             <div className="cover-overlay" />
 
-            <div className="cover-content">
+            <div className="cover-content second-cover-content">
 
               <div className="cover-heading">
 
@@ -266,47 +267,66 @@ function App() {
 
                   <div className="cover-title-text">
 
-                    <div className="cover-bebe">
-                      Bebé
+                    <div className="cover-name">
+                      ISAAC
                     </div>
 
-                    <div className="cover-en-camino">
-                      EN CAMINO
-                    </div>
-
+                    <img
+                      src={eco}
+                      alt="Ecografía de Isaac"
+                      className="second-cover-eco"
+                    />
                   </div>
 
-                  <img
-                    src={oso2}
-                    alt="Osito"
-                    className="cover-heading-bear"
-                  />
+
 
                 </div>
 
               </div>
 
-              <p className="cover-message">
-                Pronto habrá una nueva sonrisa
-                iluminando nuestras vidas y con
-                una inmensa alegría esperamos
-                su bienvenida.
-              </p>
-
               <p className="cover-message beige">
-                Mis papitos:
+                Acompañanos el día
               </p>
 
-              <div className="cover-parents">
-                Lizeth y Cristian
+              <div className="date-design">
+
+              <div className="date-block">
+                <span className="date-day">
+                  DOMINGO
+                </span>
+
+                <span className="date-time">
+                  4:00 PM
+                </span>
               </div>
 
-              <p className="cover-message">
-                Están felices esperando mi llegada
-                y quieren compartir contigo esta
-                felicidad y desde la pancita de mami
-                te invito a celebrar mi Baby Shower
-              </p>
+              <div className="date-line" />
+
+              <div className="date-number">
+                4
+              </div>
+
+              <div className="date-line" />
+
+              <div className="date-block">
+                <span className="date-month">
+                  OCTUBRE
+                </span>
+
+                <span className="date-year">
+                  2026
+                </span>
+              </div>
+
+            </div>
+
+                      <img
+            src={octubre}
+            alt="Calendario de octubre de 2026"
+            className="october-calendar"
+          />
+
+           
 
               <div className="fixed-scroll-indicator">
                 <span>Desliza para continuar</span>
@@ -328,9 +348,7 @@ function App() {
               <div className="decorative-heart">
                 ♥
               </div>
-              <div className="cover-name">
-                ISAAC
-              </div>
+
 
               <p className="message-script">
                 Hay momentos que hacen que

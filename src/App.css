@@ -2377,3 +2377,189 @@ img {
       40px 50px;
   }
 }
+
+/* =====================================================
+   SEGUNDA PORTADA
+   ===================================================== */
+
+.second-cover-eco {
+  width: min(65vw, 330px);
+  max-height: 35vh;
+  object-fit: contain;
+  margin: 10px auto 0;
+  border-radius: 18px;
+  filter: drop-shadow(0 10px 20px rgba(46, 104, 128, 0.18));
+}
+
+.second-cover-message {
+  margin: 14px 0 16px;
+}
+
+/* =====================================================
+   DISEÑO DE FECHA
+   ===================================================== */
+
+.date-design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  width: min(90vw, 520px);
+  margin: 4px auto 0;
+  color: var(--blue-dark);
+}
+
+.date-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 105px;
+  text-align: center;
+}
+
+.date-day,
+.date-month {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(17px, 2.5vw, 22px);
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.date-time,
+.date-year {
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(12px, 1.8vw, 15px);
+  color: var(--text-light);
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
+
+.date-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(65px, 9vw, 90px);
+  font-weight: 500;
+  line-height: 0.8;
+  color: var(--blue-dark);
+  min-width: 65px;
+  text-align: center;
+  transform: translateY(-18px);
+}
+
+.date-line {
+  width: 1px;
+  height: 65px;
+  background: rgba(90, 143, 168, 0.45);
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+
+  .second-cover-eco {
+    width: min(70vw, 280px);
+    max-height: 32vh;
+    margin-top: 8px;
+  }
+
+  .second-cover-message {
+    margin: 10px 0 14px;
+  }
+
+  .date-design {
+    gap: 10px;
+    width: 94vw;
+  }
+
+  .date-block {
+    min-width: 78px;
+  }
+
+  .date-day,
+  .date-month {
+    font-size: 16px;
+    letter-spacing: 1.3px;
+  }
+
+  .date-time,
+  .date-year {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+
+  .date-number {
+    font-size: 65px;
+    min-width: 48px;
+  }
+
+  .date-line {
+    height: 55px;
+  }
+}
+
+/* =====================================================
+   CENTRADO DE LA SEGUNDA PORTADA
+   ===================================================== */
+
+.second-cover-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.second-cover-content .cover-heading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.second-cover-content .cover-title-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.second-cover-content .cover-title-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 ;
+}
+
+.second-cover-content .cover-name {
+  text-align: center;
+  width: 100%;
+}
+
+.second-cover-content .second-cover-eco {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =====================================================
+   CALENDARIO OCTUBRE
+   ===================================================== */
+
+.october-calendar {
+  display: block;
+  width: min(58vw, 300px);
+  max-height: 23vh;
+  object-fit: contain;
+  margin: 18px auto 0;
+  filter: drop-shadow(0 8px 15px rgba(46, 104, 128, 0.12));
+}
+
+@media (max-width: 600px) {
+
+  .october-calendar {
+    width: min(62vw, 250px);
+    max-height: 21vh;
+    margin-top: 14px;
+  }
+
+}
