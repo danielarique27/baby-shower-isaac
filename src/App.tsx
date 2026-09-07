@@ -35,15 +35,20 @@ function App() {
         return;
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+      );
+
       const hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) /
           (1000 * 60 * 60)
       );
+
       const minutes = Math.floor(
         (distance % (1000 * 60 * 60)) /
           (1000 * 60)
       );
+
       const seconds = Math.floor(
         (distance % (1000 * 60)) / 1000
       );
@@ -58,7 +63,10 @@ function App() {
 
     updateCountdown();
 
-    const interval = setInterval(updateCountdown, 1000);
+    const interval = setInterval(
+      updateCountdown,
+      1000
+    );
 
     return () => clearInterval(interval);
   }, []);
@@ -67,13 +75,16 @@ function App() {
     setOpened(true);
 
     if (!audioRef.current) {
-      audioRef.current = new Audio("/music/indigo.mp3");
+   /*    audioRef.current = new Audio(
+        "/music/indigo.mp3"
+      );
+
       audioRef.current.loop = true;
+      audioRef.current.volume = 0.45; */
     }
 
     audioRef.current.play().catch(() => {
-      // El navegador puede bloquear el audio hasta que exista
-      // una interacción del usuario.
+      // El navegador puede bloquear el audio.
     });
   };
 
@@ -96,7 +107,8 @@ function App() {
 
       {/* =====================================================
           SOBRE INICIAL
-      ====================================================== */}
+          ===================================================== */}
+
       {!opened && (
         <div
           className="envelope-screen"
@@ -107,6 +119,7 @@ function App() {
             <div className="envelope-header">
 
               <div className="envelope-title">
+
                 <span className="envelope-title-script">
                   Mi baby
                 </span>
@@ -114,6 +127,7 @@ function App() {
                 <span className="envelope-title-shower">
                   SHOWER
                 </span>
+
               </div>
 
               <img
@@ -141,11 +155,15 @@ function App() {
             </div>
 
             <div className="envelope-text">
-              <h2>¡Estás invitado!</h2>
+
+              <h2>
+                ¡Estás invitado!
+              </h2>
 
               <p>
                 Toca el sobre para abrir
               </p>
+
             </div>
 
           </div>
@@ -154,15 +172,17 @@ function App() {
 
       {/* =====================================================
           INVITACIÓN
-      ====================================================== */}
+          ===================================================== */}
+
       {opened && (
         <main className="invitation-content">
 
           {/* =================================================
               PORTADA
-          ================================================== */}
+              ================================================= */}
+
           <section
-            className="cover-section"
+            className="cover-section page-section"
             style={{
               backgroundImage: `url(${bgFrame})`,
             }}
@@ -172,41 +192,125 @@ function App() {
 
             <div className="cover-content">
 
-              <div className="cover-small-text">
-                ¡Estás invitado a mi!
-              </div>
+              <div className="cover-heading">
 
-              <h1>
-                Baby Shower
-              </h1>
+                <div className="cover-title-row">
 
-              <div className="cover-divider">
-                <span>♥</span>
-              </div>
+                  <div className="cover-title-text">
 
-              <div className="cover-name">
-                ISAAC
+                    <div className="cover-bebe">
+                      Bebé
+                    </div>
+
+                    <div className="cover-en-camino">
+                      EN CAMINO
+                    </div>
+
+                  </div>
+
+                  <img
+                    src={oso2}
+                    alt="Osito"
+                    className="cover-heading-bear"
+                  />
+
+                </div>
+
               </div>
 
               <p className="cover-message">
-                Un pequeño milagro está en camino
+                Pronto habrá una nueva sonrisa
+                iluminando nuestras vidas y con
+                una inmensa alegría esperamos
+                su bienvenida.
+              </p>
+
+              <p className="cover-message beige">
+                Mis papitos:
               </p>
 
               <div className="cover-parents">
                 Lizeth y Cristian
               </div>
 
-              <img
-                src={oso2}
-                alt="Osito"
-                className="cover-bear"
-              />
+              <p className="cover-message">
+                Están felices esperando mi llegada
+                y quieren compartir contigo esta
+                felicidad y desde la pancita de mami
+                te invito a celebrar mi Baby Shower
+              </p>
 
-              <div className="scroll-indicator">
+              <div className="fixed-scroll-indicator">
                 <span>Desliza para continuar</span>
-                <span className="scroll-arrow">
-                  ↓
-                </span>
+                <span className="scroll-arrow">↓</span>
+              </div>
+
+            </div>
+
+          </section>
+
+          <section
+            className="cover-section page-section"
+            style={{
+              backgroundImage: `url(${bgFrame})`,
+            }}
+          >
+
+            <div className="cover-overlay" />
+
+            <div className="cover-content">
+
+              <div className="cover-heading">
+
+                <div className="cover-title-row">
+
+                  <div className="cover-title-text">
+
+                    <div className="cover-bebe">
+                      Bebé
+                    </div>
+
+                    <div className="cover-en-camino">
+                      EN CAMINO
+                    </div>
+
+                  </div>
+
+                  <img
+                    src={oso2}
+                    alt="Osito"
+                    className="cover-heading-bear"
+                  />
+
+                </div>
+
+              </div>
+
+              <p className="cover-message">
+                Pronto habrá una nueva sonrisa
+                iluminando nuestras vidas y con
+                una inmensa alegría esperamos
+                su bienvenida.
+              </p>
+
+              <p className="cover-message beige">
+                Mis papitos:
+              </p>
+
+              <div className="cover-parents">
+                Lizeth y Cristian
+              </div>
+
+              <p className="cover-message">
+                Están felices esperando mi llegada
+                y quieren compartir contigo esta
+                felicidad y desde la pancita de mami
+                te invito a celebrar mi Baby Shower
+              </p>
+
+              <div className="fixed-scroll-indicator">
+                <span>Desliza para continuar</span>
+                <span className="scroll-arrow">↓</span>
               </div>
 
             </div>
@@ -215,13 +319,17 @@ function App() {
 
           {/* =================================================
               MENSAJE
-          ================================================== */}
-          <section className="section invitation-message">
+              ================================================= */}
+
+          <section className="section page-section invitation-message">
 
             <div className="section-card">
 
               <div className="decorative-heart">
                 ♥
+              </div>
+              <div className="cover-name">
+                ISAAC
               </div>
 
               <p className="message-script">
@@ -255,9 +363,10 @@ function App() {
           </section>
 
           {/* =================================================
-              INFORMACIÓN DEL EVENTO
-          ================================================== */}
-          <section className="section event-section">
+              EVENTO
+              ================================================= */}
+
+          <section className="section page-section event-section">
 
             <div className="section-card">
 
@@ -283,6 +392,7 @@ function App() {
                   </div>
 
                   <div>
+
                     <span className="detail-label">
                       Fecha
                     </span>
@@ -290,6 +400,7 @@ function App() {
                     <strong>
                       04 de octubre de 2026
                     </strong>
+
                   </div>
 
                 </div>
@@ -301,6 +412,7 @@ function App() {
                   </div>
 
                   <div>
+
                     <span className="detail-label">
                       Hora
                     </span>
@@ -308,6 +420,7 @@ function App() {
                     <strong>
                       4:00 PM
                     </strong>
+
                   </div>
 
                 </div>
@@ -319,6 +432,7 @@ function App() {
                   </div>
 
                   <div>
+
                     <span className="detail-label">
                       Papás
                     </span>
@@ -326,6 +440,7 @@ function App() {
                     <strong>
                       Lizeth &amp; Cristian
                     </strong>
+
                   </div>
 
                 </div>
@@ -338,8 +453,9 @@ function App() {
 
           {/* =================================================
               ECOGRAFÍA
-          ================================================== */}
-          <section className="section ultrasound-section">
+              ================================================= */}
+
+          <section className="section page-section ultrasound-section">
 
             <div className="section-card">
 
@@ -381,8 +497,9 @@ function App() {
 
           {/* =================================================
               CUENTA REGRESIVA
-          ================================================== */}
-          <section className="section countdown-section">
+              ================================================= */}
+
+          <section className="section page-section countdown-section">
 
             <div className="section-card">
 
@@ -420,7 +537,9 @@ function App() {
                 <div className="countdown-item">
 
                   <span className="countdown-number">
-                    {String(timeLeft.hours).padStart(2, "0")}
+                    {String(
+                      timeLeft.hours
+                    ).padStart(2, "0")}
                   </span>
 
                   <span className="countdown-label">
@@ -436,7 +555,9 @@ function App() {
                 <div className="countdown-item">
 
                   <span className="countdown-number">
-                    {String(timeLeft.minutes).padStart(2, "0")}
+                    {String(
+                      timeLeft.minutes
+                    ).padStart(2, "0")}
                   </span>
 
                   <span className="countdown-label">
@@ -452,7 +573,9 @@ function App() {
                 <div className="countdown-item">
 
                   <span className="countdown-number">
-                    {String(timeLeft.seconds).padStart(2, "0")}
+                    {String(
+                      timeLeft.seconds
+                    ).padStart(2, "0")}
                   </span>
 
                   <span className="countdown-label">
@@ -469,8 +592,9 @@ function App() {
 
           {/* =================================================
               UBICACIÓN
-          ================================================== */}
-          <section className="section location-section">
+              ================================================= */}
+
+          <section className="section page-section location-section">
 
             <div className="section-card">
 
@@ -523,9 +647,10 @@ function App() {
           </section>
 
           {/* =================================================
-              LISTA DE REGALOS
-          ================================================== */}
-          <section className="section gifts-section">
+              REGALOS
+              ================================================= */}
+
+          <section className="section page-section gifts-section">
 
             <div className="section-card">
 
@@ -579,9 +704,10 @@ function App() {
           </section>
 
           {/* =================================================
-              DESPEDIDA
-          ================================================== */}
-          <section className="section final-section">
+              FINAL
+              ================================================= */}
+
+          <section className="section page-section final-section">
 
             <div className="final-card">
 
@@ -613,10 +739,16 @@ function App() {
 
           </section>
 
-          <footer className="footer">
+          {/* =================================================
+              FOOTER
+              ================================================= */}
+
+          <footer className="footer page-section">
+
             <span>
               Con mucho amor ♥
             </span>
+
           </footer>
 
         </main>

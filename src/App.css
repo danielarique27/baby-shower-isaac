@@ -1,36 +1,5 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Dancing+Script:wght@400;500;600&family=Nunito:wght@300;400;500;600;700&display=swap');
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #f9fbfc;
-}
-
-button {
-  font-family: inherit;
-}
-
-#root {
-  width: 100%;
-}
-
-
-/* =========================================================
-   VARIABLES
-========================================================= */
 
 :root {
   --blue-dark: #2e6880;
@@ -55,135 +24,284 @@ button {
   --page: #f9fbfc;
 }
 
-
 /* =========================================================
-   GENERAL
-========================================================= */
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
 
-.invitation {
-  width: 100%;
-  min-height: 100vh;
-  font-family: "Nunito", sans-serif;
-  color: var(--text);
-  background: var(--page);
+* {
+  box-sizing: border-box;
 }
 
-.invitation-content {
+html {
+  margin: 0;
+  padding: 0;
   width: 100%;
+  height: 100%;
+
+  scroll-behavior: smooth;
+
   overflow-x: hidden;
 }
 
-.section {
+body {
+  margin: 0;
+  padding: 0;
+
   width: 100%;
-  padding: 70px 20px;
-  display: flex;
-  justify-content: center;
+  min-height: 100%;
+
+  background: var(--page);
+  color: var(--text);
+
+  font-family: "Nunito", sans-serif;
+
+  overflow-x: hidden;
 }
 
-.section-card {
-  width: min(90vw, 650px);
-  padding: 55px 35px;
-  background: rgba(255, 255, 255, 0.94);
-  border-radius: 30px;
-  text-align: center;
-  box-shadow: 0 18px 50px rgba(90, 143, 168, 0.12);
-  border: 1px solid rgba(184, 216, 234, 0.45);
+button {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+#root {
+  width: 100%;
+}
+
+.invitation {
+  width: 100%;
+  min-height: 100dvh;
+
+  overflow-x: hidden;
 }
 
 
 /* =========================================================
-   SOBRE INICIAL
-========================================================= */
+   CONTENEDOR PRINCIPAL
+   Cada sección ocupa exactamente una pantalla
+   ========================================================= */
+
+.invitation-content {
+  width: 100%;
+  height: 100dvh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-section {
+  position: relative;
+
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+
+/* =========================================================
+   SECCIONES GENERALES
+   ========================================================= */
+
+.section {
+  position: relative;
+
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
+
+  padding: 30px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.section-card {
+  position: relative;
+
+  width: min(90vw, 650px);
+
+  max-height: calc(100dvh - 70px);
+
+  padding: 40px 35px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border-radius: 30px;
+
+  text-align: center;
+
+  box-shadow:
+    0 18px 50px rgba(90, 143, 168, 0.12);
+
+  border:
+    1px solid rgba(184, 216, 234, 0.45);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   INDICADOR "DESLIZA PARA CONTINUAR"
+   IMPORTANTE:
+   Debe estar fuera de .section-card
+   ========================================================= */
+
+.fixed-scroll-indicator {
+  position: absolute;
+
+  left: 50%;
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  z-index: 100;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  color: var(--text-light);
+
+  font-family: "Nunito", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.2;
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.fixed-scroll-indicator span:first-child {
+  opacity: 0.9;
+}
+
+.fixed-scroll-indicator .scroll-arrow {
+  display: block;
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  animation:
+    arrowFloat 1.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
 
 .envelope-screen {
   position: fixed;
   inset: 0;
+
   z-index: 100;
+
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 20px;
 
   background:
-    linear-gradient(
-      135deg,
-      #dceaf5 0%,
-      #f0e8da 100%
+    radial-gradient(
+      circle at center,
+      #ffffff 0%,
+      #eef7fb 55%,
+      #dceef6 100%
     );
 
   cursor: pointer;
+
+  overflow: hidden;
 }
 
 .envelope-container {
   position: relative;
-  width: min(85vw, 420px);
-  margin: 0 auto;
-}
 
+  width: min(88vw, 500px);
 
-/* =========================================================
-   CABECERA DEL SOBRE
-========================================================= */
-
-.envelope-header {
-  position: relative;
-  width: 100%;
-  height: 175px;
-  margin-bottom: 0;
-}
-
-
-/* Título centrado independientemente del oso */
-
-.envelope-title {
-  position: absolute;
-  left: 30%;
-  top: 36px;
-  transform: translateX(-50%);
-  width: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.envelope-header {
+  position: relative;
+
+  width: 100%;
+  height: 190px;
+}
+
+.envelope-title {
+  position: absolute;
+
+  left: 30%;
+  top: 36px;
+
+  transform: translateX(-50%);
+
+  width: 75%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   text-align: center;
+
   line-height: 1;
+
   z-index: 5;
 
-  animation: titleDrop 2.2s ease-out forwards;
+  animation:
+    titleDrop 2.2s ease-out forwards;
 }
-
-@keyframes titleDrop {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -100px);
-  }
-
-  60% {
-    opacity: 1;
-    transform: translate(-50%, 10px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-
-
-
-/* MY BABY */
 
 .envelope-title-script {
-  font-family: "Great Vibes", cursive;
+  font-family:
+    "Great Vibes",
+    cursive;
 
   white-space: nowrap;
 
-  font-size: clamp(58px, 13vw, 88px);
+  font-size:
+    clamp(58px, 13vw, 88px);
 
   font-weight: 400;
 
   line-height: 0.85;
-
-  letter-spacing: 0;
 
   color: var(--blue-primary);
 
@@ -191,13 +309,13 @@ button {
     0 2px 8px rgba(90, 143, 168, 0.15);
 }
 
-
-/* SHOWER */
-
 .envelope-title-shower {
-  font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
-  font-size: clamp(27px, 6vw, 38px);
+  font-size:
+    clamp(27px, 6vw, 38px);
 
   font-weight: 600;
 
@@ -206,24 +324,16 @@ button {
   line-height: 1;
 
   margin-top: 14px;
-
   margin-left: 10px;
 
   color: var(--blue-dark);
 }
-
-
-/* =========================================================
-   OSO DEL SOBRE
-========================================================= */
 
 .envelope-bear {
   position: absolute;
 
   width: 180px;
   height: auto;
-
-  object-fit: contain;
 
   right: -44px;
   bottom: -18px;
@@ -242,38 +352,12 @@ button {
     bearFloat 3s ease-in-out infinite;
 }
 
-@keyframes bearFloat {
-
-  0% {
-    transform:
-      translateY(0)
-      rotate(0deg);
-  }
-
-  50% {
-    transform:
-      translateY(-8px)
-      rotate(1.5deg);
-  }
-
-  100% {
-    transform:
-      translateY(0)
-      rotate(0deg);
-  }
-}
-
-
-/* =========================================================
-   SOBRE
-========================================================= */
-
 .envelope {
+  position: relative;
+
   width: 100%;
 
   aspect-ratio: 1.55 / 1;
-
-  position: relative;
 
   overflow: hidden;
 
@@ -282,20 +366,15 @@ button {
   border-radius: 18px;
 
   border:
-    2px solid
-    rgba(255, 255, 255, 0.9);
+    2px solid rgba(255, 255, 255, 0.9);
 
   box-shadow:
     0 24px 60px
     rgba(90, 143, 168, 0.30);
 }
 
-
-/* Lado izquierdo */
-
 .envelope-left {
   position: absolute;
-
   inset: 0;
 
   z-index: 2;
@@ -311,12 +390,8 @@ button {
     100px solid transparent;
 }
 
-
-/* Lado derecho */
-
 .envelope-right {
   position: absolute;
-
   inset: 0;
 
   z-index: 2;
@@ -332,9 +407,6 @@ button {
     100px solid transparent;
 }
 
-
-/* Parte inferior */
-
 .envelope-bottom {
   position: absolute;
 
@@ -344,8 +416,7 @@ button {
 
   height: 58%;
 
-  background:
-    var(--envelope-bottom);
+  background: var(--envelope-bottom);
 
   clip-path:
     polygon(
@@ -359,9 +430,6 @@ button {
   z-index: 2;
 }
 
-
-/* Solapa superior */
-
 .envelope-flap {
   position: absolute;
 
@@ -371,8 +439,7 @@ button {
   width: 100%;
   height: 65%;
 
-  background:
-    var(--envelope-flap);
+  background: var(--envelope-flap);
 
   clip-path:
     polygon(
@@ -384,16 +451,18 @@ button {
   z-index: 3;
 }
 
-
-/* Sello */
-
 .envelope-seal {
   position: absolute;
+
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
 
-  width: clamp(56px, 15vw, 70px);
+  transform:
+    translate(-50%, -50%);
+
+  width:
+    clamp(56px, 15vw, 70px);
+
   aspect-ratio: 1;
 
   display: flex;
@@ -402,7 +471,6 @@ button {
 
   border-radius: 50%;
 
-  /* Lacre café suave */
   background:
     radial-gradient(
       circle at 35% 30%,
@@ -413,69 +481,62 @@ button {
 
   color: #f8f3eb;
 
-  /* Borde exterior */
-  border: 2px solid rgba(248, 243, 235, 0.65);
+  border:
+    2px solid rgba(248, 243, 235, 0.65);
 
-  /* Relieve del sello */
   box-shadow:
-    0 5px 12px rgba(90, 143, 168, 0.20),
-    inset 0 2px 3px rgba(255, 255, 255, 0.28),
-    inset 0 -3px 5px rgba(105, 75, 45, 0.20);
+    0 5px 12px
+    rgba(90, 143, 168, 0.20),
+
+    inset 0 2px 3px
+    rgba(255, 255, 255, 0.28),
+
+    inset 0 -3px 5px
+    rgba(105, 75, 45, 0.20);
 
   z-index: 20;
 }
 
-/* Borde interior del lacre */
 .envelope-seal::before {
   content: "";
+
   position: absolute;
+
   inset: 5px;
 
   border-radius: 50%;
 
-  border: 1px solid rgba(248, 243, 235, 0.55);
+  border:
+    1px solid
+    rgba(248, 243, 235, 0.55);
 
   box-shadow:
-    inset 0 0 4px rgba(105, 75, 45, 0.15);
+    inset 0 0 4px
+    rgba(105, 75, 45, 0.15);
 }
 
-/* Letra I */
 .isaac-seal span {
   position: relative;
+
   z-index: 2;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(38px, 9vw, 50px);
-  font-weight: 600;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
-  font-style: italic;
+  font-size:
+    clamp(40px, 9vw, 52px);
+
+  font-weight: 600;
 
   line-height: 1;
 
   color: #f8f3eb;
 
   text-shadow:
-    0 1px 1px rgba(105, 75, 45, 0.20);
+    0 1px 1px
+    rgba(105, 75, 45, 0.20);
 }
-
-.isaac-seal span {
-  position: relative;
-  z-index: 2;
-
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(40px, 9vw, 52px);
-  font-weight: 600;
-  font-style: normal;
-
-  line-height: 1;
-  color: #f8f3eb;
-
-  text-shadow:
-    0 1px 1px rgba(105, 75, 45, 0.20);
-}
-
-
-/* Texto debajo */
 
 .envelope-text {
   margin-top: 22px;
@@ -495,8 +556,7 @@ button {
 
   font-weight: 600;
 
-  color:
-    var(--blue-primary);
+  color: var(--blue-primary);
 }
 
 .envelope-text p {
@@ -506,38 +566,38 @@ button {
   font-size:
     clamp(.65rem, 2.5vw, .8rem);
 
-  color:
-    var(--text-light);
+  color: var(--text-light);
 
-  letter-spacing:
-    .5px;
+  letter-spacing: .5px;
 }
 
 
 /* =========================================================
    PORTADA
-========================================================= */
+   ========================================================= */
 
 .cover-section {
   position: relative;
 
-  min-height: 100vh;
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 60px 20px;
+  padding: 20px;
 
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 
   overflow: hidden;
 }
 
 .cover-overlay {
   position: absolute;
-
   inset: 0;
 
   background:
@@ -546,6 +606,8 @@ button {
       rgba(255,255,255,.60),
       rgba(232,243,249,.72)
     );
+
+  pointer-events: none;
 }
 
 .cover-content {
@@ -553,90 +615,159 @@ button {
 
   z-index: 2;
 
-  width: min(90vw, 650px);
+  width: min(92vw, 650px);
 
-  padding: 70px 30px;
+  height: 100%;
+
+  padding: 20px 25px;
 
   text-align: center;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.cover-small-text {
-  font-family:
-    "Cormorant Garamond",
-    serif;
+.cover-heading {
+  width: 100%;
 
-  font-size:
-    clamp(22px, 5vw, 30px);
+  display: flex;
+  justify-content: center;
 
-  color:
-    var(--blue-dark);
+  margin-bottom: 12px;
 }
 
-.cover-content h1 {
-  margin:
-    5px 0 0;
+.cover-title-row {
+  position: relative;
 
+  width: min(100%, 520px);
+
+  min-height: 160px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.cover-title-text {
+  position: relative;
+
+  z-index: 2;
+
+  order: 2;
+
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.cover-bebe {
   font-family:
     "Great Vibes",
     cursive;
 
   font-size:
-    clamp(60px, 14vw, 100px);
+    clamp(64px, 11vw, 95px);
 
   font-weight: 400;
 
-  color:
-    var(--blue-primary);
+  line-height: .9;
 
-  line-height: 1;
+  color: var(--blue-primary);
+
+  text-shadow:
+    0 3px 10px
+    rgba(90, 143, 168, 0.15);
 }
 
-.cover-divider {
-  margin:
-    15px 0;
+.cover-en-camino {
+  margin-top: 8px;
 
-  color:
-    var(--blue-medium);
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
-  font-size: 22px;
+  font-size:
+    clamp(25px, 5vw, 36px);
+
+  font-weight: 500;
+
+  font-style: italic;
+
+  letter-spacing: 2px;
+
+  color: #c9ad8c;
+}
+
+.cover-heading-bear {
+  position: static;
+
+  width: 145px;
+
+  height: auto;
+
+  flex: 0 0 145px;
+
+  order: 1;
+
+  margin: 0;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(
+      0 10px 15px
+      rgba(46, 104, 128, 0.16)
+    );
+
+  animation:
+    bearFloat 3s ease-in-out infinite;
 }
 
 .cover-name {
+  margin-top: 2px;
+
   font-family:
     "Cormorant Garamond",
     serif;
 
   font-size:
-    clamp(48px, 12vw, 80px);
+    clamp(45px, 8vw, 70px);
 
   font-weight: 600;
 
-  letter-spacing:
-    12px;
+  letter-spacing: 10px;
 
-  color:
-    var(--blue-dark);
+  color: var(--blue-dark);
 }
 
 .cover-message {
-  max-width: 430px;
+  max-width: 500px;
 
   margin:
-    18px auto 8px;
+    3px auto 5px;
 
   font-family:
     "Cormorant Garamond",
     serif;
 
   font-size:
-    clamp(19px, 4vw, 25px);
+    clamp(16px, 2.5vw, 22px);
 
-  color:
-    var(--text);
+  line-height: 1.25;
+
+  color: var(--text);
+}
+
+.beige {
+  color: #c9ad8c !important;
 }
 
 .cover-parents {
@@ -645,50 +776,757 @@ button {
     cursive;
 
   font-size:
-    clamp(35px, 8vw, 50px);
+    clamp(30px, 6vw, 45px);
 
-  color:
-    var(--beige-dark);
+  color: var(--beige-dark);
 
-  margin-top:
-    5px;
+  margin-top: 0;
+  margin-bottom: 4px;
 }
 
 .cover-bear {
   width:
-    clamp(170px, 45vw, 250px);
+    clamp(125px, 22vw, 180px);
 
-  margin-top:
-    25px;
-
-  animation:
-    bearFloat 3s ease-in-out infinite;
+  margin-top: 5px;
 
   filter:
     drop-shadow(
       0 10px 15px
-      rgba(46, 104, 128, .16)
+      rgba(46,104,128,.16)
+    );
+
+  animation:
+    bearFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   MENSAJE
+   ========================================================= */
+
+.invitation-message {
+  background:
+    linear-gradient(
+      180deg,
+      #f9fbfc,
+      #eef6fa
     );
 }
 
-.scroll-indicator {
-  margin-top: 35px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-
-  color:
-    var(--text-light);
-
-  font-size: 12px;
+.invitation-message .section-card {
+  padding:
+    clamp(25px, 5vh, 45px)
+    clamp(20px, 5vw, 45px);
 }
 
-.scroll-arrow {
+.decorative-heart {
+  color: var(--blue-medium);
+
+  font-size: 28px;
+
+  margin-bottom: 10px;
+}
+
+.message-script {
+  margin:
+    0 0 12px;
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size:
+    clamp(27px, 5vh, 42px);
+
+  line-height: 1.05;
+
+  color: var(--blue-dark);
+}
+
+.invitation-message p:not(.message-script) {
+  max-width: 540px;
+
+  margin:
+    7px auto;
+
+  line-height: 1.45;
+
+  font-size:
+    clamp(15px, 2.2vh, 19px);
+}
+
+.baby-name {
+  margin:
+    8px 0;
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size:
+    clamp(45px, 7vh, 65px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: var(--blue-primary);
+}
+
+.small-divider {
+  margin:
+    8px 0;
+
+  color: var(--blue-medium);
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+
+.section-title-decoration {
+  color: var(--blue-medium);
+
+  font-size: 22px;
+
+  margin-bottom: 5px;
+}
+
+.section-title {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(30px, 5vw, 42px);
+
+  font-weight: 600;
+
+  color: var(--blue-dark);
+}
+
+.section-subtitle {
+  max-width: 500px;
+
+  margin:
+    8px auto 20px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(18px, 3vw, 23px);
+
+  font-style: italic;
+
+  line-height: 1.25;
+
+  color: var(--text-light);
+}
+
+
+/* =========================================================
+   EVENTO
+   ========================================================= */
+
+.event-section {
+  background: #f5f9fb;
+}
+
+.event-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  width: 100%;
+
+  max-width: 480px;
+
+  margin: 0 auto;
+}
+
+.event-detail {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  text-align: left;
+
+  padding:
+    14px 18px;
+
+  background: #f8fcfe;
+
+  border-radius: 18px;
+
+  border:
+    1px solid
+    var(--blue-very-light);
+}
+
+.detail-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e4f2f8;
+
+  color: var(--blue-primary);
+
+  font-size: 22px;
+}
+
+.event-detail div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.detail-label {
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+
+  color: var(--blue-soft);
+}
+
+.event-detail strong {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 21px;
+
+  color: var(--blue-dark);
+}
+
+
+/* =========================================================
+   ECOGRAFÍA
+   ========================================================= */
+
+.ultrasound-section {
+  background:
+    linear-gradient(
+      180deg,
+      #eef7fb,
+      #ffffff
+    );
+}
+
+.ultrasound-name {
+  margin:
+    -8px 0 12px;
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size:
+    clamp(45px, 8vh, 65px);
+
+  font-weight: 400;
+
+  color: var(--blue-primary);
+}
+
+.ultrasound-frame {
+  width:
+    min(100%, 400px);
+
+  max-height: 45dvh;
+
+  margin: 0 auto;
+
+  padding: 12px;
+
+  background: #f7f3eb;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(90, 143, 168, .12);
+
+  overflow: hidden;
+}
+
+.ultrasound-image {
+  width: 100%;
+
+  max-height: 41dvh;
+
+  display: block;
+
+  border-radius: 12px;
+
+  object-fit: contain;
+}
+
+.ultrasound-message {
+  margin:
+    12px auto 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
   font-size: 20px;
 
+  font-style: italic;
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   CUENTA REGRESIVA
+   ========================================================= */
+
+.countdown-section {
+  background: #f7fafc;
+}
+
+.countdown-title {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(32px, 7vw, 44px);
+
+  color: var(--blue-dark);
+}
+
+.countdown-subtitle {
+  margin:
+    8px 0 25px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 20px;
+
+  font-style: italic;
+
+  color: var(--text-light);
+}
+
+.countdown {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap:
+    clamp(3px, 1.5vw, 12px);
+
+  flex-wrap: nowrap;
+}
+
+.countdown-item {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  min-width:
+    clamp(48px, 11vw, 80px);
+}
+
+.countdown-number {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(32px, 7vw, 50px);
+
+  font-weight: 600;
+
+  color: var(--blue-dark);
+
+  line-height: 1;
+}
+
+.countdown-label {
+  margin-top: 5px;
+
+  font-size:
+    clamp(8px, 1.8vw, 12px);
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  color: var(--blue-soft);
+}
+
+.countdown-separator {
+  align-self: flex-start;
+
+  margin-top: 4px;
+
+  font-size:
+    clamp(20px, 5vw, 35px);
+
+  color: var(--blue-light);
+}
+
+
+/* =========================================================
+   UBICACIÓN
+   ========================================================= */
+
+.location-section {
+  background: #eef6fa;
+}
+
+.location-card {
+  width: 100%;
+
+  max-width: 520px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: white;
+
+  box-shadow:
+    0 15px 35px
+    rgba(90, 143, 168, .13);
+}
+
+.location-image {
+  display: block;
+
+  width: 100%;
+
+  height: 190px;
+
+  object-fit: cover;
+}
+
+.location-info {
+  padding:
+    16px 20px 20px;
+}
+
+.location-icon {
+  color: var(--blue-primary);
+
+  font-size: 24px;
+
+  margin-bottom: 3px;
+}
+
+.location-info h3 {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 28px;
+
+  color: var(--blue-dark);
+}
+
+.location-info p {
+  margin:
+    4px 0 12px;
+
+  color: var(--text-light);
+}
+
+.location-button,
+.gift-button {
+  border: none;
+
+  padding:
+    11px 24px;
+
+  border-radius: 30px;
+
+  background: var(--blue-primary);
+
+  color: white;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    box-shadow .2s ease;
+}
+
+.location-button:hover,
+.gift-button:hover {
+  background: var(--blue-dark);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(46, 104, 128, .22);
+}
+
+
+/* =========================================================
+   REGALOS
+   ========================================================= */
+
+.gifts-section {
+  background: #f9fbfc;
+}
+
+.gift-card {
+  width: 100%;
+
+  max-width: 520px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: white;
+
+  box-shadow:
+    0 15px 35px
+    rgba(90, 143, 168, .13);
+}
+
+.gift-image {
+  width: 100%;
+
+  height: 190px;
+
+  object-fit: cover;
+}
+
+.gift-info {
+  padding:
+    16px 20px 20px;
+}
+
+.gift-icon {
+  color: var(--blue-primary);
+
+  font-size: 25px;
+
+  margin-bottom: 3px;
+}
+
+.gift-info h3 {
+  margin:
+    0 0 8px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 28px;
+
+  color: var(--blue-dark);
+}
+
+.gift-info p {
+  max-width: 430px;
+
+  margin:
+    0 auto 14px;
+
+  line-height: 1.45;
+
+  color: var(--text-light);
+}
+
+
+/* =========================================================
+   FINAL
+   ========================================================= */
+
+.final-section {
+  background:
+    linear-gradient(
+      135deg,
+      #dceaf5,
+      #f0e8da
+    );
+}
+
+.final-card {
+  position: relative;
+
+  width: min(90vw, 600px);
+
+  padding: 30px;
+
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.final-bear {
+  width:
+    min(190px, 42vw);
+
+  margin-bottom: 8px;
+
+  filter:
+    drop-shadow(
+      0 10px 15px
+      rgba(46,104,128,.16)
+    );
+
   animation:
-    arrowFloat 1.5s ease-in-out infinite;
+    bearFloat 3s ease-in-out infinite;
+}
+
+.final-card h2 {
+  margin: 0;
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size:
+    clamp(48px, 8vw, 70px);
+
+  font-weight: 400;
+
+  color: var(--blue-primary);
+}
+
+.final-card p {
+  max-width: 400px;
+
+  margin:
+    10px auto;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 21px;
+
+  line-height: 1.35;
+
+  color: var(--text);
+}
+
+.final-hearts {
+  margin:
+    10px 0;
+
+  color: var(--blue-medium);
+
+  letter-spacing: 8px;
+
+  font-size: 20px;
+}
+
+.final-card strong {
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size: 32px;
+
+  font-weight: 400;
+
+  color: var(--beige-dark);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  width: 100%;
+
+  height: 100dvh;
+  min-height: 100dvh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  text-align: center;
+
+  background: var(--blue-dark);
+
+  color:
+    rgba(255,255,255,.85);
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+
+@keyframes bearFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-8px)
+      rotate(1.5deg);
+  }
 }
 
 @keyframes arrowFloat {
@@ -705,767 +1543,87 @@ button {
   }
 }
 
+@keyframes titleDrop {
 
-/* =========================================================
-   MENSAJE
-========================================================= */
+  0% {
+    opacity: 0;
 
-.invitation-message {
-  background:
-    linear-gradient(
-      180deg,
-      #f9fbfc,
-      #eef6fa
-    );
-}
+    transform:
+      translate(-50%, -100px);
+  }
 
-.decorative-heart {
-  color:
-    var(--blue-medium);
+  60% {
+    opacity: 1;
 
-  font-size: 28px;
+    transform:
+      translate(-50%, 10px);
+  }
 
-  margin-bottom: 15px;
-}
+  100% {
+    opacity: 1;
 
-.message-script {
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    clamp(25px, 6vw, 34px);
-
-  line-height: 1.3;
-
-  color:
-    var(--blue-dark);
-}
-
-.invitation-message p:not(.message-script) {
-  line-height: 1.8;
-
-  font-size: 16px;
-}
-
-.baby-name {
-  margin:
-    15px 0;
-
-  font-family:
-    "Great Vibes",
-    cursive;
-
-  font-size:
-    clamp(55px, 12vw, 80px);
-
-  font-weight: 400;
-
-  color:
-    var(--blue-primary);
-}
-
-.small-divider {
-  margin:
-    18px 0;
-
-  color:
-    var(--blue-medium);
-
-  font-size: 20px;
+    transform:
+      translate(-50%, 0);
+  }
 }
 
 
 /* =========================================================
-   TÍTULOS GENERALES
-========================================================= */
-
-.section-title-decoration {
-  color:
-    var(--blue-medium);
-
-  font-size: 22px;
-
-  margin-bottom: 8px;
-}
-
-.section-title {
-  margin:
-    0;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    clamp(31px, 7vw, 42px);
-
-  font-weight: 600;
-
-  color:
-    var(--blue-dark);
-}
-
-.section-subtitle {
-  max-width: 500px;
-
-  margin:
-    12px auto 35px;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    clamp(18px, 4vw, 23px);
-
-  line-height: 1.4;
-
-  color:
-    var(--text-light);
-}
-
-
-/* =========================================================
-   EVENTO
-========================================================= */
-
-.event-section {
-  background:
-    #f5f9fb;
-}
-
-.event-details {
-  display: flex;
-  flex-direction: column;
-
-  gap: 18px;
-
-  max-width: 480px;
-
-  margin:
-    0 auto;
-}
-
-.event-detail {
-  display: flex;
-
-  align-items: center;
-
-  gap: 18px;
-
-  text-align: left;
-
-  padding:
-    16px 20px;
-
-  background:
-    #f8fcfe;
-
-  border-radius:
-    18px;
-
-  border:
-    1px solid
-    var(--blue-very-light);
-}
-
-.detail-icon {
-  width: 48px;
-  height: 48px;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background:
-    #e4f2f8;
-
-  color:
-    var(--blue-primary);
-
-  font-size: 23px;
-}
-
-.event-detail div:last-child {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 3px;
-}
-
-.detail-label {
-  font-size: 12px;
-
-  text-transform: uppercase;
-
-  letter-spacing:
-    1.5px;
-
-  color:
-    var(--blue-soft);
-}
-
-.event-detail strong {
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 21px;
-
-  color:
-    var(--blue-dark);
-}
-
-
-/* =========================================================
-   ECOGRAFÍA
-========================================================= */
-
-.ultrasound-section {
-  background:
-    linear-gradient(
-      180deg,
-      #eef7fb,
-      #ffffff
-    );
-}
-
-.ultrasound-name {
-  margin:
-    -20px 0 25px;
-
-  font-family:
-    "Great Vibes",
-    cursive;
-
-  font-size:
-    clamp(50px, 11vw, 70px);
-
-  font-weight: 400;
-
-  color:
-    var(--blue-primary);
-}
-
-.ultrasound-frame {
-  width:
-    min(100%, 430px);
-
-  margin:
-    0 auto;
-
-  padding:
-    15px;
-
-  background:
-    #f7f3eb;
-
-  border-radius:
-    20px;
-
-  box-shadow:
-    0 12px 30px
-    rgba(90, 143, 168, .12);
-}
-
-.ultrasound-image {
-  width: 100%;
-
-  display: block;
-
-  border-radius:
-    12px;
-
-  object-fit: contain;
-}
-
-.ultrasound-message {
-  margin:
-    25px auto 0;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    21px;
-
-  color:
-    var(--text);
-}
-
-
-/* =========================================================
-   CUENTA REGRESIVA
-========================================================= */
-
-.countdown-section {
-  background:
-    #f7fafc;
-}
-
-.countdown-title {
-  margin:
-    0;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    clamp(32px, 7vw, 44px);
-
-  color:
-    var(--blue-dark);
-}
-
-.countdown-subtitle {
-  margin:
-    10px 0 35px;
-
-  color:
-    var(--text-light);
-}
-
-.countdown {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: clamp(5px, 2vw, 15px);
-
-  flex-wrap: nowrap;
-}
-
-.countdown-item {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  min-width:
-    clamp(50px, 13vw, 85px);
-}
-
-.countdown-number {
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    clamp(32px, 8vw, 50px);
-
-  font-weight: 600;
-
-  color:
-    var(--blue-dark);
-
-  line-height: 1;
-}
-
-.countdown-label {
-  margin-top:
-    7px;
-
-  font-size:
-    clamp(9px, 2vw, 12px);
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    1px;
-
-  color:
-    var(--blue-soft);
-}
-
-.countdown-separator {
-  align-self:
-    flex-start;
-
-  margin-top:
-    5px;
-
-  font-size:
-    clamp(22px, 5vw, 35px);
-
-  color:
-    var(--blue-light);
-}
-
-
-/* =========================================================
-   UBICACIÓN
-========================================================= */
-
-.location-section {
-  background:
-    #eef6fa;
-}
-
-.location-card {
-  overflow:
-    hidden;
-
-  border-radius:
-    24px;
-
-  background:
-    white;
-
-  box-shadow:
-    0 15px 35px
-    rgba(90, 143, 168, .13);
-}
-
-.location-image {
-  display: block;
-
-  width: 100%;
-
-  height: 220px;
-
-  object-fit: cover;
-}
-
-.location-info {
-  padding:
-    28px 20px 30px;
-}
-
-.location-icon {
-  color:
-    var(--blue-primary);
-
-  font-size:
-    24px;
-
-  margin-bottom:
-    5px;
-}
-
-.location-info h3 {
-  margin:
-    0;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    30px;
-
-  color:
-    var(--blue-dark);
-}
-
-.location-info p {
-  margin:
-    5px 0 20px;
-
-  color:
-    var(--text-light);
-}
-
-.location-button,
-.gift-button {
-  border:
-    none;
-
-  padding:
-    12px 25px;
-
-  border-radius:
-    30px;
-
-  background:
-    var(--blue-primary);
-
-  color:
-    white;
-
-  font-size:
-    14px;
-
-  cursor:
-    pointer;
-
-  transition:
-    transform .2s ease,
-    background .2s ease,
-    box-shadow .2s ease;
-}
-
-.location-button:hover,
-.gift-button:hover {
-  background:
-    var(--blue-dark);
-
-  transform:
-    translateY(-2px);
-
-  box-shadow:
-    0 8px 20px
-    rgba(46, 104, 128, .22);
-}
-
-
-/* =========================================================
-   REGALOS
-========================================================= */
-
-.gifts-section {
-  background:
-    #f9fbfc;
-}
-
-.gift-card {
-  display:
-    flex;
-
-  flex-direction:
-    column;
-
-  overflow:
-    hidden;
-
-  border-radius:
-    24px;
-
-  background:
-    white;
-
-  box-shadow:
-    0 15px 35px
-    rgba(90, 143, 168, .13);
-}
-
-.gift-image {
-  width:
-    100%;
-
-  height:
-    230px;
-
-  object-fit:
-    cover;
-}
-
-.gift-info {
-  padding:
-    30px 25px 35px;
-}
-
-.gift-icon {
-  color:
-    var(--blue-primary);
-
-  font-size:
-    25px;
-
-  margin-bottom:
-    5px;
-}
-
-.gift-info h3 {
-  margin:
-    0 0 10px;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    30px;
-
-  color:
-    var(--blue-dark);
-}
-
-.gift-info p {
-  max-width:
-    430px;
-
-  margin:
-    0 auto 22px;
-
-  line-height:
-    1.6;
-
-  color:
-    var(--text-light);
-}
-
-
-/* =========================================================
-   FINAL
-========================================================= */
-
-.final-section {
-  min-height:
-    500px;
-
-  align-items:
-    center;
-
-  background:
-    linear-gradient(
-      135deg,
-      #dceaf5,
-      #f0e8da
-    );
-}
-
-.final-card {
-  position:
-    relative;
-
-  width:
-    min(90vw, 600px);
-
-  padding:
-    50px 30px;
-
-  text-align:
-    center;
-}
-
-.final-bear {
-  width:
-    170px;
-
-  max-width:
-    50vw;
-
-  margin-bottom:
-    10px;
-
-  animation:
-    bearFloat 3s ease-in-out infinite;
-}
-
-.final-card h2 {
-  margin:
-    0;
-
-  font-family:
-    "Great Vibes",
-    cursive;
-
-  font-size:
-    clamp(50px, 12vw, 75px);
-
-  font-weight:
-    400;
-
-  color:
-    var(--blue-primary);
-}
-
-.final-card p {
-  max-width:
-    450px;
-
-  margin:
-    15px auto;
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    22px;
-
-  line-height:
-    1.5;
-
-  color:
-    var(--text);
-}
-
-.final-hearts {
-  margin:
-    22px 0;
-
-  color:
-    var(--blue-medium);
-
-  letter-spacing:
-    8px;
-}
-
-.final-card strong {
-  font-family:
-    "Great Vibes",
-    cursive;
-
-  font-size:
-    35px;
-
-  font-weight:
-    400;
-
-  color:
-    var(--beige-dark);
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.footer {
-  padding:
-    25px;
-
-  text-align:
-    center;
-
-  background:
-    var(--blue-dark);
-
-  color:
-    rgba(255,255,255,.85);
-
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size:
-    17px;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+   CELULAR
+   ========================================================= */
 
 @media (max-width: 600px) {
 
   .section {
+    height: 100dvh;
+    min-height: 100dvh;
+
     padding:
-      50px 15px;
+      15px 15px 55px;
   }
 
   .section-card {
+    width: 94vw;
+
+    max-height:
+      calc(100dvh - 70px);
+
     padding:
-      40px 22px;
-    border-radius:
-      25px;
+      25px 20px;
+
+    border-radius: 25px;
   }
 
 
-  /* SOBRE */
+  /* -------------------------------------------------------
+     INDICADOR
+     ------------------------------------------------------- */
+
+  .fixed-scroll-indicator {
+    bottom:
+      max(12px, env(safe-area-inset-bottom));
+
+    font-size: 10px;
+
+    gap: 4px;
+
+    width: 100%;
+  }
+
+  .fixed-scroll-indicator .scroll-arrow {
+    font-size: 19px;
+
+    line-height: 1;
+  }
+
+
+  /* -------------------------------------------------------
+     SOBRE
+     ------------------------------------------------------- */
+
+  .envelope-screen {
+    padding: 15px;
+  }
 
   .envelope-container {
     width:
@@ -1473,8 +1631,7 @@ button {
   }
 
   .envelope-header {
-    height:
-      155px;
+    height: 155px;
   }
 
   .envelope-title-script {
@@ -1486,27 +1643,527 @@ button {
     font-size:
       clamp(24px, 6vw, 34px);
 
-    letter-spacing:
-      8px;
+    letter-spacing: 8px;
 
-    margin-top:
-      12px;
+    margin-top: 12px;
   }
 
   .envelope-bear {
-    width:
-      155px;
+    width: 155px;
 
-    right:
-      -5px;
+    right: -5px;
 
-    bottom:
-      -15px;
+    bottom: -15px;
   }
 
   .envelope-text {
-    margin-top:
-      18px;
+    margin-top: 18px;
+  }
+
+  .envelope-text h2 {
+    font-size: 28px;
+  }
+
+
+  /* -------------------------------------------------------
+     PORTADA
+     ------------------------------------------------------- */
+
+  .cover-section {
+    height: 100dvh;
+    min-height: 100dvh;
+
+    padding:
+      10px 10px 55px;
+  }
+
+  .cover-content {
+    width: 94vw;
+
+    height: 100%;
+
+    padding:
+      15px 10px;
+  }
+
+  .cover-heading {
+    width: 100%;
+
+    margin-bottom: 8px;
+  }
+
+  .cover-title-row {
+    width: 100%;
+
+    min-height: 145px;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 2px;
+  }
+
+  .cover-heading-bear {
+    position: relative;
+
+    left: -40px;
+
+    right: auto;
+    bottom: auto;
+
+    width: 105px;
+
+    height: auto;
+
+    flex:
+      0 0 105px;
+
+    order: 1;
+
+    margin: 0;
+  }
+
+  .cover-title-text {
+    position: relative;
+
+    z-index: 2;
+
+    order: 2;
+
+    margin:
+      0 0 0 -40px;
+
+    flex:
+      0 0 auto;
+  }
+
+  .cover-bebe {
+    font-family:
+      "Great Vibes",
+      cursive;
+
+    font-size: 58px;
+
+    font-weight: 400;
+
+    line-height: .9;
+  }
+
+  .cover-en-camino {
+    margin-top: 7px;
+
+    font-size: 23px;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+  }
+
+  .cover-name {
+    margin-top: 0;
+
+    font-size: 40px;
+
+    letter-spacing: 6px;
+  }
+
+  .cover-message {
+    max-width: 330px;
+
+    font-size: 20px;
+
+    line-height: 1.18;
+
+    margin:
+      20px auto 4px;
+  }
+
+  .cover-parents {
+    font-size: 42px;
+
+    margin-top: 0;
+
+    margin-bottom: 3px;
+  }
+
+  .cover-bear {
+    width: 120px;
+
+    margin-top: 3px;
+  }
+
+
+  /* -------------------------------------------------------
+     MENSAJE
+     ------------------------------------------------------- */
+
+  .invitation-message .section-card {
+    padding:
+      25px 20px;
+  }
+
+  .message-script {
+    font-size:
+      clamp(25px, 5vh, 35px);
+
+    margin-bottom: 9px;
+  }
+
+  .invitation-message p:not(.message-script) {
+    font-size:
+      clamp(14px, 2.1vh, 17px);
+
+    line-height: 1.35;
+
+    margin:
+      6px auto;
+  }
+
+  .baby-name {
+    font-size:
+      clamp(42px, 7vh, 58px);
+
+    margin:
+      6px 0;
+  }
+
+
+  /* -------------------------------------------------------
+     TÍTULOS
+     ------------------------------------------------------- */
+
+  .section-title {
+    font-size:
+      clamp(29px, 8vw, 38px);
+  }
+
+  .section-subtitle {
+    font-size: 18px;
+
+    margin-bottom: 15px;
+  }
+
+
+  /* -------------------------------------------------------
+     EVENTO
+     ------------------------------------------------------- */
+
+  .event-details {
+    gap: 11px;
+  }
+
+  .event-detail {
+    gap: 12px;
+
+    padding:
+      12px 14px;
+  }
+
+  .detail-icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 20px;
+  }
+
+  .event-detail strong {
+    font-size: 19px;
+  }
+
+
+  /* -------------------------------------------------------
+     ECOGRAFÍA
+     ------------------------------------------------------- */
+
+  .ultrasound-name {
+    font-size: 40px;
+
+    margin-bottom: 7px;
+  }
+
+  .ultrasound-frame {
+    width:
+      min(100%, 300px);
+
+    max-height: 40dvh;
+
+    padding: 10px;
+  }
+
+  .ultrasound-image {
+    max-height: 36dvh;
+  }
+
+  .ultrasound-message {
+    font-size: 18px;
+
+    margin-top: 8px;
+  }
+
+
+  /* -------------------------------------------------------
+     COUNTDOWN
+     ------------------------------------------------------- */
+
+  .countdown {
+    gap: 3px;
+  }
+
+  .countdown-item {
+    min-width: 48px;
+  }
+
+  .countdown-number {
+    font-size: 29px;
+  }
+
+  .countdown-label {
+    font-size: 8px;
+
+    letter-spacing: .5px;
+  }
+
+  .countdown-separator {
+    font-size: 22px;
+
+    margin-top: 3px;
+  }
+
+  .countdown-subtitle {
+    font-size: 18px;
+
+    margin-bottom: 20px;
+  }
+
+
+  /* -------------------------------------------------------
+     UBICACIÓN
+     ------------------------------------------------------- */
+
+  .location-image {
+    height: 155px;
+  }
+
+  .location-info {
+    padding:
+      14px 15px 16px;
+  }
+
+  .location-info h3 {
+    font-size: 22px;
+  }
+
+
+  /* -------------------------------------------------------
+     REGALOS
+     ------------------------------------------------------- */
+
+  .gift-image {
+    height: 155px;
+  }
+
+  .gift-info {
+    padding:
+      14px 15px 16px;
+  }
+
+  .gift-info h3 {
+    font-size: 23px;
+  }
+
+  .gift-info p {
+    font-size: 13px;
+
+    margin-bottom: 10px;
+  }
+
+
+  /* -------------------------------------------------------
+     FINAL
+     ------------------------------------------------------- */
+
+  .final-card {
+    padding:
+      20px;
+  }
+
+  .final-bear {
+    width: 170px;
+  }
+
+  .final-card h2 {
+    font-size: 50px;
+  }
+
+  .final-card p {
+    font-size: 18px;
+
+    max-width: 310px;
+  }
+
+  .final-card strong {
+    font-size: 25px;
+  }
+}
+
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 370px) {
+
+  .section {
+    padding:
+      10px 10px 52px;
+  }
+
+  .section-card {
+    width: 95vw;
+
+    max-height:
+      calc(100dvh - 65px);
+
+    padding:
+      20px 16px;
+  }
+
+
+  /* SOBRE */
+
+  .envelope-title-script {
+    font-size: 52px;
+  }
+
+  .envelope-title-shower {
+    font-size: 22px;
+
+    letter-spacing: 6px;
+  }
+
+  .envelope-bear {
+    width: 135px;
+
+    right: 0;
+
+    bottom: -10px;
+  }
+
+  .envelope-text h2 {
+    font-size: 25px;
+  }
+
+
+  /* PORTADA */
+
+  .cover-heading-bear {
+    width: 95px;
+
+    flex-basis: 95px;
+
+    left: -35px;
+  }
+
+  .cover-title-text {
+    margin-left: -35px;
+  }
+
+  .cover-bebe {
+    font-size: 53px;
+  }
+
+  .cover-en-camino {
+    font-size: 21px;
+  }
+
+  .cover-name {
+    font-size: 37px;
+
+    letter-spacing: 5px;
+  }
+
+  .cover-message {
+    font-size: 13.5px;
+  }
+
+  .cover-parents {
+    font-size: 28px;
+  }
+
+  .cover-bear {
+    width: 110px;
+  }
+
+
+  /* MENSAJE */
+
+  .message-script {
+    font-size: 25px;
+  }
+
+  .invitation-message p:not(.message-script) {
+    font-size: 13.5px;
+  }
+
+  .baby-name {
+    font-size: 43px;
+  }
+
+
+  /* COUNTDOWN */
+
+  .countdown-number {
+    font-size: 27px;
+  }
+
+  .countdown-label {
+    font-size: 8px;
+  }
+
+
+  /* IMÁGENES */
+
+  .location-image,
+  .gift-image {
+    height: 135px;
+  }
+
+
+  /* INDICADOR */
+
+  .fixed-scroll-indicator {
+    bottom:
+      max(10px, env(safe-area-inset-bottom));
+
+    font-size: 9px;
+  }
+
+  .fixed-scroll-indicator .scroll-arrow {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   PANTALLAS CON POCA ALTURA
+   ========================================================= */
+
+@media (max-height: 650px) {
+
+  .section {
+    padding:
+      8px 15px 48px;
+  }
+
+  .section-card {
+    max-height:
+      calc(100dvh - 58px);
+
+    padding: 20px;
   }
 
 
@@ -1514,117 +2171,209 @@ button {
 
   .cover-content {
     padding:
-      50px 15px;
+      8px 15px;
+  }
+
+  .cover-heading {
+    margin-bottom: 2px;
+  }
+
+  .cover-title-row {
+    min-height: 105px;
+  }
+
+  .cover-bebe {
+    font-size: 50px;
+  }
+
+  .cover-en-camino {
+    font-size: 21px;
+  }
+
+  .cover-heading-bear {
+    width: 90px;
+
+    flex-basis: 90px;
   }
 
   .cover-name {
-    letter-spacing:
-      7px;
+    font-size: 36px;
+
+    letter-spacing: 6px;
+  }
+
+  .cover-message {
+    font-size: 20px;
+
+    line-height: 1.12;
+
+    margin:
+      1px auto 3px;
+  }
+
+  .cover-parents {
+    font-size: 42px;
+  }
+
+  .cover-bear {
+    width: 100px;
+
+    margin-top: 2px;
   }
 
 
-  /* COUNTDOWN */
+  /* MENSAJE */
 
-  .countdown {
-    gap:
-      3px;
+  .message-script {
+    font-size: 27px;
   }
 
-  .countdown-item {
-    min-width:
-      48px;
+  .invitation-message p:not(.message-script) {
+    font-size: 14px;
+
+    line-height: 1.25;
   }
 
-  .countdown-separator {
-    font-size:
-      22px;
-  }
+  .baby-name {
+    font-size: 43px;
 
-
-  /* LOCATION */
-
-  .location-image {
-    height:
-      190px;
+    margin:
+      4px 0;
   }
 
 
-  /* GIFT */
+  /* ECOGRAFÍA */
 
+  .ultrasound-frame {
+    max-height: 34dvh;
+  }
+
+  .ultrasound-image {
+    max-height: 30dvh;
+  }
+
+
+  /* IMÁGENES */
+
+  .location-image,
   .gift-image {
-    height:
-      190px;
+    height: 125px;
   }
 
-}
 
+  /* INDICADOR */
 
-@media (max-width: 370px) {
+  .fixed-scroll-indicator {
+    bottom: 8px;
 
-  .envelope-title-script {
-    font-size:
-      52px;
+    font-size: 9px;
+
+    gap: 2px;
   }
 
-  .envelope-title-shower {
-    font-size:
-      22px;
-
-    letter-spacing:
-      6px;
+  .fixed-scroll-indicator .scroll-arrow {
+    font-size: 17px;
   }
-
-  .envelope-bear {
-    width:
-      135px;
-
-    right:
-      0;
-
-    bottom:
-      -10px;
-  }
-
-  .countdown-number {
-    font-size:
-      27px;
-  }
-
-  .countdown-label {
-    font-size:
-      8px;
-  }
-
 }
 
 
 /* =========================================================
-   PANTALLAS PEQUEÑAS EN ALTURA
-========================================================= */
+   ESCRITORIO
+   ========================================================= */
 
-@media (max-height: 650px) {
+@media (min-width: 601px) {
+
+  .cover-title-row {
+    position: relative;
+
+    width:
+      min(100%, 520px);
+
+    min-height: 160px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+  }
+
+  .cover-heading-bear {
+    position: static;
+
+    width: 150px;
+
+    height: auto;
+
+    flex:
+      0 0 150px;
+
+    order: 1;
+
+    margin: 0;
+  }
+
+  .cover-title-text {
+    position: relative;
+
+    z-index: 2;
+
+    order: 2;
+
+    margin: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .cover-bebe {
+    font-family:
+      "Dancing Script",
+      cursive;
+
+    font-size: 78px;
+
+    font-weight: 600;
+
+    line-height: .9;
+  }
+
+  .cover-en-camino {
+    font-size: 32px;
+  }
+
+  .fixed-scroll-indicator {
+    bottom: 18px;
+
+    font-size: 12px;
+  }
+
+  .fixed-scroll-indicator .scroll-arrow {
+    font-size: 22px;
+  }
+}
+
+
+/* =========================================================
+   ESCRITORIO GRANDE
+   ========================================================= */
+
+@media (min-width: 901px) {
 
   .cover-section {
-    min-height:
-      700px;
+    background-size: 100% 100%;
+
+    background-position: center;
   }
 
-  .cover-content {
+  .section-card {
     padding:
-      35px 20px;
+      40px 50px;
   }
-
-  .cover-bear {
-    width:
-      150px;
-
-    margin-top:
-      10px;
-  }
-
-  .scroll-indicator {
-    margin-top:
-      20px;
-  }
-
 }
