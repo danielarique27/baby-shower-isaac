@@ -76,12 +76,12 @@ function App() {
     setOpened(true);
 
     if (!audioRef.current) {
-      /*    audioRef.current = new Audio(
+        audioRef.current = new Audio(
            "/music/indigo.mp3"
          );
    
          audioRef.current.loop = true;
-         audioRef.current.volume = 0.45; */
+         audioRef.current.volume = 0.45; 
     }
 
     audioRef.current.play().catch(() => {
