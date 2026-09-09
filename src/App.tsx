@@ -76,17 +76,17 @@ function App() {
     setOpened(true);
 
     if (!audioRef.current) {
-         audioRef.current = new Audio(
-           "/music/indigo.mp3"
-         );
-   
-         audioRef.current.loop = true;
-         audioRef.current.volume = 0.45;  
+      /* audioRef.current = new Audio(
+        "/music/indigo.mp3"
+      );
+
+      audioRef.current.loop = true;
+      audioRef.current.volume = 0.45; */
     }
 
-    audioRef.current.play().catch(() => {
-      // El navegador puede bloquear el audio.
-    });
+    /*  audioRef.current.play().catch(() => {
+       // El navegador puede bloquear el audio.
+     }); */
   };
 
   const abrirUbicacion = () => {
@@ -288,7 +288,7 @@ function App() {
 
 
 
-             {/*  <div className="fixed-scroll-indicator">
+              {/*  <div className="fixed-scroll-indicator">
                 <span>Desliza para continuar</span>
                 <span className="scroll-arrow">↓</span>
               </div> */}
@@ -298,200 +298,19 @@ function App() {
           </section>
 
           {/* =================================================
-              MENSAJE
-              ================================================= */}
+    TERCERA PÁGINA - DIRECCIÓN / CONFIRMAR
+    ================================================= */}
+          <section
+            className="cover-section page-section third-page-section"
+            style={{
+              backgroundImage: `url(${bgFrame})`,
+            }}
+          >
+            <div className="cover-overlay" />
 
-          <section className="section page-section invitation-message">
-
-            <div className="section-card">
-
-              <div className="decorative-heart">
-                ♥
-              </div>
-
-
-              <p className="message-script">
-                Hay momentos que hacen que
-                el corazón se llene de amor...
-              </p>
-
-              <p>
-                Y uno de ellos está por llegar.
-                Queremos compartir contigo la
-                alegría de celebrar la llegada de
-                nuestro pequeño
-              </p>
-
-              <h2 className="baby-name">
-                Isaac
-              </h2>
-
-              <div className="small-divider">
-                ♥
-              </div>
-
-              <p>
-                Acompáñanos a celebrar este
-                momento tan especial junto a
-                nosotros.
-              </p>
-
-            </div>
-
-          </section>
-
-          {/* =================================================
-              EVENTO
-              ================================================= */}
-
-          <section className="section page-section event-section">
-
-            <div className="section-card">
-
-              <div className="section-title-decoration">
-                <span>✦</span>
-              </div>
-
-              <h2 className="section-title">
-                Un día muy especial
-              </h2>
-
-              <p className="section-subtitle">
-                Para celebrar la llegada de
-                nuestro pequeño
-              </p>
-
-              <div className="event-details">
-
-                <div className="event-detail">
-
-                  <div className="detail-icon">
-                    ♡
-                  </div>
-
-                  <div>
-
-                    <span className="detail-label">
-                      Fecha
-                    </span>
-
-                    <strong>
-                      04 de octubre de 2026
-                    </strong>
-
-                  </div>
-
-                </div>
-
-                <div className="event-detail">
-
-                  <div className="detail-icon">
-                    ◷
-                  </div>
-
-                  <div>
-
-                    <span className="detail-label">
-                      Hora
-                    </span>
-
-                    <strong>
-                      4:00 PM
-                    </strong>
-
-                  </div>
-
-                </div>
-
-                <div className="event-detail">
-
-                  <div className="detail-icon">
-                    ♧
-                  </div>
-
-                  <div>
-
-                    <span className="detail-label">
-                      Papás
-                    </span>
-
-                    <strong>
-                      Lizeth &amp; Cristian
-                    </strong>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </section>
-
-          {/* =================================================
-              ECOGRAFÍA
-              ================================================= */}
-
-          <section className="section page-section ultrasound-section">
-
-            <div className="section-card">
-
-              <h2 className="section-title">
-                Ya casi nos conocemos
-              </h2>
-
-              <p className="section-subtitle">
-                Con mucho amor esperamos
-                la llegada de
-              </p>
-
-              <h3 className="ultrasound-name">
-                Isaac
-              </h3>
-
-              <div className="ultrasound-frame">
-
-                <img
-                  src={eco2}
-                  alt="Ecografía de Isaac"
-                  className="ultrasound-image"
-                />
-
-              </div>
-
-              <p className="ultrasound-message">
-                Te esperamos con todo
-                nuestro amor.
-              </p>
-
-              <div className="small-divider">
-                ♥
-              </div>
-
-            </div>
-
-          </section>
-
-          {/* =================================================
-              CUENTA REGRESIVA
-              ================================================= */}
-
-          <section className="section page-section countdown-section">
-
-            <div className="section-card">
-
-              <div className="section-title-decoration">
-                <span>✦</span>
-              </div>
-
-              <h2 className="countdown-title">
-                Cuenta regresiva
-              </h2>
-
+            <div className="third-page-content">
               <p className="countdown-subtitle">
-                Cada vez falta menos para
-                celebrar juntos
+                FALTA MENOS...
               </p>
 
               <div className="countdown">
@@ -564,70 +383,153 @@ function App() {
 
               </div>
 
-            </div>
+              <div className="arch-wrapper">
 
-          </section>
+                <div className="arch-direction">
+                  <div className="direction-content">
 
-          {/* =================================================
-              UBICACIÓN
-              ================================================= */}
+                    <div className="direction-title">
+                      <span className="direction-line"></span>
+                      <span className="direction-title-text">DIRECCIÓN</span>
+                      <span className="direction-line"></span>
+                    </div>
 
-          <section className="section page-section location-section">
+                    <div className="direction-location-row">
 
-            <div className="section-card">
+                      <img
+                        src={ubicacion}
+                        alt="Ubicación"
+                        className="direction-image"
+                      />
 
-              <h2 className="section-title">
-                ¿Dónde nos encontramos?
-              </h2>
+                      <p className="direction-place">
+                        Salón Comunal
+                        <br />
+                        Barrio La Libertad
+                      </p>
 
-              <p className="section-subtitle">
-                Te esperamos para compartir
-                este momento tan especial
-              </p>
+                    </div>
 
-              <div className="location-card">
+                    <a
+                      href="https://www.google.com/maps/place/4%C2%B025'44.5%22N+75%C2%B013'57.1%22W/@4.4290203,-75.2331767,19z/data=!3m1!4b1!4m4!3m3!8m2!3d4.429019!4d-75.232533?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="location-link"
+                    >
+                      Ver ubicación
+                    </a>
 
-                <img
-                  src={ubicacion}
-                  alt="Ubicación del evento"
-                  className="location-image"
-                />
 
-                <div className="location-info">
+                  </div>
+                </div>
 
-                  <div className="location-icon">
-                    ♥
+                <div className="arch-confirm">
+
+                  {/* TÍTULO */}
+                  <div className="confirm-title">
+
+                    <span className="confirm-line"></span>
+
+                    <span className="confirm-title-text">
+                      CONFIRMAR
+                      <br />
+                      ASISTENCIA
+                    </span>
+
+                    <span className="confirm-line"></span>
+
                   </div>
 
-                  <h3>
-                    Estadio Manuel
-                    Murillo Toro
-                  </h3>
 
-                  <p>
-                    Ibagué, Tolima
+                  {/* MENSAJE */}
+                  <p className="confirm-message">
+                    Nos encantará saber que nos acompañarás.
+
                   </p>
 
-                  <button
-                    type="button"
-                    className="location-button"
-                    onClick={abrirUbicacion}
-                  >
-                    Ver ubicación
-                  </button>
+                  <div className="confirm-buttons">
+
+                    <a
+                        href="https://wa.me/3166996063?text=Hola%2C%20quiero%20confirmar%20mi%20asistencia%20al%20Baby%20Shower%20de%20Isaac."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="confirm-button"
+                    >
+                      CONFIRMAR A MAMÁ
+                    </a>
+
+                    <a
+                      href="https://wa.me/TUNUMEROPAPA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="confirm-button"
+                    >
+                      CONFIRMAR A PAPÁ
+                    </a>
+
+                  </div>
 
                 </div>
 
               </div>
+            </div>
+          </section>
+
+          {/* =================================================
+    CUARTA PÁGINA - 
+    ================================================= */}
+          <section
+            className="cover-section page-section third-page-section"
+            style={{
+              backgroundImage: `url(${bgFrame})`,
+            }}
+          >
+            <div className="cover-overlay" />
+
+            <div className="third-page-content">
+
+              <p className="countdown-subtitle">
+                REGALO + UN PAÑAL
+              </p>
+
+              <img
+                src={regalo}
+                alt="Regalo"
+                className="regalo-image"
+              />
+               <div className="gift-info">
+
+                  <h3>
+                    Lista de regalos
+                  </h3>
+
+                  <p>
+                    Si deseas obsequiarnos algo
+                    para Isaac, hemos preparado
+                    una lista con algunas ideas.
+                  </p>
+
+                  <button
+                    type="button"
+                    className="gift-button"
+                    onClick={abrirRegalos}
+                  >
+                    Ver lista de regalos
+                  </button>
+
+                </div>
 
             </div>
-
           </section>
+
+
+        
+
 
           {/* =================================================
               REGALOS
               ================================================= */}
-
+{/* 
           <section className="section page-section gifts-section">
 
             <div className="section-card">
@@ -679,7 +581,7 @@ function App() {
 
             </div>
 
-          </section>
+          </section> */}
 
           {/* =================================================
               FINAL
@@ -705,12 +607,12 @@ function App() {
                 inolvidables.
               </p>
 
-              <div className="final-hearts">
+             {/*  <div className="final-hearts">
                 ♥ ♥ ♥
-              </div>
+              </div> */}
 
               <strong>
-                Lizeth &amp; Cristian
+                Lizeth y Cristian
               </strong>
 
             </div>

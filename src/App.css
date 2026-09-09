@@ -13,6 +13,7 @@
   --blue-very-light: #b8d8ea;
 
   --envelope: #d7ebf5;
+  --envelope-soft: rgba(215, 235, 245, 0.75);
   --envelope-bottom: #d0e7f2;
   --envelope-flap: #b9d9e8;
   --envelope-fold: #c4dfec;
@@ -213,12 +214,10 @@ img {
   padding: 20px;
 
   background:
-    radial-gradient(
-      circle at center,
+    radial-gradient(circle at center,
       #ffffff 0%,
       #eef7fb 55%,
-      #dceef6 100%
-    );
+      #dceef6 100%);
 
   cursor: pointer;
 
@@ -310,9 +309,7 @@ img {
   pointer-events: none;
 
   filter:
-    drop-shadow(
-      0 8px 12px rgba(46, 104, 128, 0.16)
-    );
+    drop-shadow(0 8px 12px rgba(46, 104, 128, 0.16));
 
   animation: bearFloat 3s ease-in-out infinite;
 }
@@ -343,8 +340,7 @@ img {
   z-index: 2;
 
   border-left:
-    clamp(110px, 28vw, 170px)
-    solid var(--envelope-fold);
+    clamp(110px, 28vw, 170px) solid var(--envelope-fold);
 
   border-top: 100px solid transparent;
   border-bottom: 100px solid transparent;
@@ -357,8 +353,7 @@ img {
   z-index: 2;
 
   border-right:
-    clamp(110px, 28vw, 170px)
-    solid var(--envelope-fold);
+    clamp(110px, 28vw, 170px) solid var(--envelope-fold);
 
   border-top: 100px solid transparent;
   border-bottom: 100px solid transparent;
@@ -376,13 +371,11 @@ img {
   background: var(--envelope-bottom);
 
   clip-path:
-    polygon(
-      0 0,
+    polygon(0 0,
       50% 75%,
       100% 0,
       100% 100%,
-      0 100%
-    );
+      0 100%);
 
   z-index: 2;
 }
@@ -399,11 +392,9 @@ img {
   background: var(--envelope-flap);
 
   clip-path:
-    polygon(
-      0 0,
+    polygon(0 0,
       100% 0,
-      50% 82%
-    );
+      50% 82%);
 
   z-index: 3;
 }
@@ -427,12 +418,10 @@ img {
   border-radius: 50%;
 
   background:
-    radial-gradient(
-      circle at 35% 30%,
+    radial-gradient(circle at 35% 30%,
       #d5bea3 0%,
       #c7aa88 45%,
-      #b99873 100%
-    );
+      #b99873 100%);
 
   color: #f8f3eb;
 
@@ -542,11 +531,9 @@ img {
   inset: 0;
 
   background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.60),
-      rgba(232,243,249,.72)
-    );
+    linear-gradient(180deg,
+      rgba(255, 255, 255, .60),
+      rgba(232, 243, 249, .72));
 
   pointer-events: none;
 }
@@ -658,9 +645,7 @@ img {
   pointer-events: none;
 
   filter:
-    drop-shadow(
-      0 10px 15px rgba(46, 104, 128, 0.16)
-    );
+    drop-shadow(0 10px 15px rgba(46, 104, 128, 0.16));
 
   animation:
     bearFloat 3s ease-in-out infinite;
@@ -721,9 +706,7 @@ img {
   margin-top: 5px;
 
   filter:
-    drop-shadow(
-      0 10px 15px rgba(46,104,128,.16)
-    );
+    drop-shadow(0 10px 15px rgba(46, 104, 128, .16));
 
   animation:
     bearFloat 3s ease-in-out infinite;
@@ -818,9 +801,7 @@ img {
   border-radius: 18px;
 
   filter:
-    drop-shadow(
-      0 10px 20px rgba(46, 104, 128, 0.18)
-    );
+    drop-shadow(0 10px 20px rgba(46, 104, 128, 0.18));
 }
 
 /* =========================================================
@@ -843,9 +824,7 @@ img {
   margin: 0 auto;
 
   filter:
-    drop-shadow(
-      0 8px 15px rgba(46, 104, 128, 0.12)
-    );
+    drop-shadow(0 8px 15px rgba(46, 104, 128, 0.12));
 }
 
 /* =========================================================
@@ -854,17 +833,14 @@ img {
 
 .invitation-message {
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       #f9fbfc,
-      #eef6fa
-    );
+      #eef6fa);
 }
 
 .invitation-message .section-card {
   padding:
-    clamp(25px, 5vh, 45px)
-    clamp(20px, 5vw, 45px);
+    clamp(25px, 5vh, 45px) clamp(20px, 5vw, 45px);
 }
 
 .decorative-heart {
@@ -1057,11 +1033,9 @@ img {
 
 .ultrasound-section {
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       #eef7fb,
-      #ffffff
-    );
+      #ffffff);
 }
 
 .ultrasound-name {
@@ -1340,6 +1314,7 @@ img {
 
 .gift-info {
   padding: 16px 20px 20px;
+  text-align: center;
 }
 
 .gift-icon {
@@ -1378,11 +1353,9 @@ img {
 
 .final-section {
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       #dceaf5,
-      #f0e8da
-    );
+      #f0e8da);
 }
 
 .final-card {
@@ -1406,9 +1379,7 @@ img {
   margin-bottom: 8px;
 
   filter:
-    drop-shadow(
-      0 10px 15px rgba(46,104,128,.16)
-    );
+    drop-shadow(0 10px 15px rgba(46, 104, 128, .16));
 
   animation:
     bearFloat 3s ease-in-out infinite;
@@ -1486,7 +1457,7 @@ img {
 
   background: var(--blue-dark);
 
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, .85);
 
   font-family:
     "Cormorant Garamond",
@@ -1500,21 +1471,21 @@ img {
    ========================================================= */
 
 @keyframes bearFloat {
+
   0%,
   100% {
     transform:
-      translateY(0)
-      rotate(0deg);
+      translateY(0) rotate(0deg);
   }
 
   50% {
     transform:
-      translateY(-8px)
-      rotate(1.5deg);
+      translateY(-8px) rotate(1.5deg);
   }
 }
 
 @keyframes arrowFloat {
+
   0%,
   100% {
     transform:
@@ -1813,11 +1784,9 @@ img {
   */
 
   .second-cover-content .second-cover-eco {
-    width: clamp(
-      240px,
-      62vw,
-      300px
-    );
+    width: clamp(240px,
+        62vw,
+        300px);
 
     max-width: 88vw;
 
@@ -1837,11 +1806,9 @@ img {
   */
 
   .second-cover-content .fechas-image {
-    width: clamp(
-      290px,
-      78vw,
-      360px
-    );
+    width: clamp(290px,
+        78vw,
+        360px);
 
     max-width: 94vw;
 
@@ -2489,11 +2456,9 @@ img {
   }
 
   .second-cover-content .second-cover-eco {
-    width: clamp(
-      300px,
-      32vw,
-      380px
-    );
+    width: clamp(300px,
+        32vw,
+        380px);
 
     max-width: 380px;
 
@@ -2501,11 +2466,9 @@ img {
   }
 
   .second-cover-content .fechas-image {
-    width: clamp(
-      400px,
-      55vw,
-      520px
-    );
+    width: clamp(400px,
+        55vw,
+        520px);
 
     max-width: 520px;
 
@@ -2529,4 +2492,1461 @@ img {
     padding:
       40px 50px;
   }
+}
+
+/* =========================================================
+   TERCERA PÁGINA
+   CONTADOR + DIRECCIÓN + CONFIRMAR ASISTENCIA
+   ========================================================= */
+
+.third-page-section {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.third-page-section .cover-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.third-page-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding:
+    clamp(30px, 6vh, 65px)
+    10px
+    3dvh;
+  gap: clamp(8px, 1.5vh, 16px);
+}
+
+
+/* =========================================================
+   SUBTÍTULO DEL CONTADOR
+   ========================================================= */
+
+.third-page-content .countdown-subtitle {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(20px, 3vw, 30px);
+  line-height: 1.15;
+  color: var(--blue-dark);
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   CONTADOR
+   ========================================================= */
+
+.third-page-content .countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-shrink: 0;
+  gap: clamp(5px, 1.5vw, 14px);
+}
+
+.third-page-content .countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: clamp(42px, 9vw, 75px);
+}
+
+.third-page-content .countdown-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(25px, 5vw, 40px);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--blue-dark);
+}
+
+.third-page-content .countdown-label {
+  margin-top: 4px;
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(9px, 1.8vw, 13px);
+  line-height: 1;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.third-page-content .countdown-separator {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(22px, 4vw, 34px);
+  color: var(--blue-primary);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   CONTENEDOR DE LOS ARCOS
+   ========================================================= */
+
+.third-page-content .arch-wrapper {
+  position: relative;
+  width: min(88vw, 720px);
+  height: clamp(430px, 50dvh, 540px);
+  margin-top: 5px;
+  flex-shrink: 0;
+  min-height: 0;
+}
+
+
+/* =========================================================
+   ARCO AZUL - DIRECCIÓN
+   ========================================================= */
+
+.third-page-content .arch-direction {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: clamp(280px, 70vw, 580px);
+  height: 100%;
+  transform: translateX(-50%);
+  background: #c9e2ec;
+
+  border-radius:
+    50% 50% 24px 24px /
+    24% 24% 4% 4%;
+
+  box-sizing: border-box;
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+
+  box-shadow:
+    0 15px 35px rgba(90, 143, 168, 0.14);
+
+  z-index: 2;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DETALLE DECORATIVO ARCO AZUL
+   ========================================================= */
+
+.third-page-content .arch-direction::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 5%;
+  width: 90%;
+  height: 25%;
+  border-radius: 50%;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENIDO DIRECCIÓN
+   ========================================================= */
+
+.third-page-content .direction-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  box-sizing: border-box;
+
+  padding-top: clamp(28px, 5vh, 55px);
+}
+
+
+/* =========================================================
+   TÍTULO DIRECCIÓN
+   ========================================================= */
+
+.third-page-content .direction-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 90%;
+
+  gap: clamp(8px, 2vw, 18px);
+
+  margin-bottom: 0;
+}
+
+.third-page-content .direction-line {
+  display: block;
+  width: clamp(25px, 8vw, 65px);
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  flex-shrink: 1;
+}
+
+.third-page-content .direction-title-text {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(21px, 4.5vw, 32px);
+
+  font-weight: 600;
+
+  letter-spacing:
+    clamp(1.5px, 0.4vw, 4px);
+
+  line-height: 1;
+
+  color: var(--white);
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 2px 8px rgba(46, 104, 128, 0.12);
+}
+
+
+/* =========================================================
+   UBICACIÓN
+   ========================================================= */
+
+.third-page-content .direction-location-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 85%;
+
+  gap: clamp(10px, 2vw, 18px);
+
+  margin-top: 5px;
+}
+
+.third-page-content .direction-image {
+  width: clamp(42px, 9vw, 65px);
+  height: auto;
+
+  max-width: none;
+
+  flex-shrink: 0;
+
+  object-fit: contain;
+
+  margin: 0;
+
+  filter:
+    drop-shadow(
+      0 4px 8px
+      rgba(46, 104, 128, 0.14)
+    );
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.third-page-content .direction-place {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(18px, 3.5vw, 27px);
+
+  font-weight: 600;
+
+  line-height: 1.1;
+
+  letter-spacing:
+    clamp(0.3px, 0.15vw, 1.5px);
+
+  color: var(--white);
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 2px 8px rgba(46, 104, 128, 0.12);
+}
+
+
+/* =========================================================
+   BOTÓN VER UBICACIÓN
+   ========================================================= */
+
+.third-page-content .location-link {
+  display: inline-block;
+
+  margin-top: 0;
+
+  padding: 7px 18px 8px;
+
+  font-family: "Nunito", sans-serif;
+
+  font-size: clamp(16px, 3.5vw, 21px);
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  color: var(--blue-dark);
+
+  text-decoration: none;
+
+  background: rgba(240, 232, 218, 0.88);
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 3px 8px rgba(46, 104, 128, 0.10);
+
+  transform-origin: center center;
+
+  animation:
+    locationSway 2s ease-in-out infinite;
+
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   ANIMACIÓN VER UBICACIÓN
+   DERECHA → IZQUIERDA
+   ========================================================= */
+
+@keyframes locationSway {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  18% {
+    transform: rotate(-4deg);
+  }
+
+  36% {
+    transform: rotate(0deg);
+  }
+
+  54% {
+    transform: rotate(4deg);
+  }
+
+  72% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+
+}
+
+.third-page-content .location-link:hover {
+  animation-play-state: paused;
+
+  background: rgba(240, 232, 218, 1);
+
+  transform: rotate(0deg);
+
+  box-shadow:
+    0 7px 14px rgba(46, 104, 128, 0.18);
+}
+
+
+/* =========================================================
+   ARCO BLANCO - CONFIRMAR ASISTENCIA
+   ========================================================= */
+
+.third-page-content .arch-confirm {
+  position: absolute;
+
+  bottom: 0;
+
+  left: 39%;
+
+  width: clamp(220px, 58vw, 400px);
+
+  height: clamp(215px, 25dvh, 270px);
+
+  transform: translateX(-50%);
+
+  background: var(--white);
+
+  border-radius:
+    50% 50% 22px 22px /
+    25% 25% 4% 4%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding-top: clamp(25px, 4vh, 48px);
+
+  box-sizing: border-box;
+
+  border: 2px solid rgba(122, 179, 204, 0.32);
+
+  box-shadow:
+    0 12px 28px rgba(46, 104, 128, 0.18);
+
+  z-index: 3;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DETALLE DECORATIVO ARCO BLANCO
+   ========================================================= */
+
+.third-page-content .arch-confirm::before {
+  content: "";
+
+  position: absolute;
+
+  top: 9px;
+  left: 7%;
+
+  width: 86%;
+  height: 30%;
+
+  border-radius: 50%;
+
+  border-top:
+    1px solid rgba(122, 179, 204, 0.22);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TÍTULO CONFIRMAR ASISTENCIA
+   ========================================================= */
+
+.third-page-content .confirm-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 90%;
+
+  gap: clamp(8px, 2vw, 18px);
+
+  margin-bottom:
+    clamp(12px, 2vh, 20px);
+
+  position: relative;
+  z-index: 2;
+}
+
+.third-page-content .confirm-line {
+  display: block;
+
+  width: clamp(25px, 8vw, 65px);
+
+  height: 1px;
+
+  background:
+    rgba(122, 179, 204, 0.55);
+
+  flex-shrink: 1;
+}
+
+.third-page-content .confirm-title-text {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size:
+    clamp(18px, 4.2vw, 27px);
+
+  font-weight: 600;
+
+  letter-spacing:
+    clamp(1.2px, 0.35vw, 3px);
+
+  line-height: 1;
+
+  color: var(--blue-dark);
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 2px 8px rgba(46, 104, 128, 0.08);
+}
+
+
+/* =========================================================
+   MENSAJE CONFIRMACIÓN
+   ========================================================= */
+
+.third-page-content .confirm-message {
+  position: relative;
+
+  z-index: 2;
+
+  width: 82%;
+
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size:
+    clamp(16px, 3.5vw, 22px);
+
+  font-weight: 500;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.2px;
+
+  color: var(--text);
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   BOTONES CONFIRMAR ASISTENCIA
+   ========================================================= */
+
+.third-page-content .confirm-buttons {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  width: 90%;
+
+  margin-top: 0;
+}
+
+.third-page-content .confirm-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 105px;
+
+  padding: 7px 12px;
+
+  font-family: "Nunito", sans-serif;
+
+  font-size: 13px;
+
+  text-align: center;
+
+  font-weight: normal;
+
+  letter-spacing: 0.2px;
+
+  color: var(--beige-dark);
+
+  text-decoration: none;
+
+  background: transparent;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 4px 10px rgba(46, 104, 128, 0.16);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.third-page-content .confirm-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 14px rgba(46, 104, 128, 0.22);
+
+  background: var(--blue-dark);
+}
+
+.third-page-content .confirm-button:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .third-page-content {
+    padding:
+      clamp(25px, 5vh, 45px)
+      0
+      2dvh;
+
+    gap:
+      clamp(7px, 1.2vh, 12px);
+  }
+
+
+  /* ---------- CONTADOR ---------- */
+
+  .third-page-content .countdown-subtitle {
+    font-size:
+      clamp(18px, 5vw, 24px);
+
+    max-width: 90%;
+  }
+
+  .third-page-content .countdown {
+    gap:
+      clamp(3px, 1vw, 8px);
+  }
+
+  .third-page-content .countdown-item {
+    min-width:
+      clamp(38px, 10vw, 55px);
+  }
+
+  .third-page-content .countdown-number {
+    font-size:
+      clamp(22px, 6vw, 31px);
+  }
+
+  .third-page-content .countdown-label {
+    font-size:
+      clamp(8px, 2vw, 11px);
+  }
+
+  .third-page-content .countdown-separator {
+    font-size:
+      clamp(20px, 5vw, 27px);
+
+    margin-bottom: 10px;
+  }
+
+
+  /* ---------- ARCOS ---------- */
+
+  /*
+     IMPORTANTE:
+     La altura ya no depende directamente de d vh.
+
+     Esto evita que un teléfono alto como
+     440 x 956 haga crecer demasiado los arcos.
+  */
+
+  .third-page-content .arch-wrapper {
+    width: 100vw;
+
+    height:
+      clamp(386px, 90vw, 400px);
+
+    margin-top: 37px;
+
+    flex-shrink: 0;
+  }
+
+
+  /* ---------- DIRECCIÓN ---------- */
+
+  .third-page-content .arch-direction {
+    width: 70vw;
+
+    height: 100%;
+
+    border-radius:
+      50% 50% 20px 20px /
+      22% 22% 4% 4%;
+  }
+
+  .third-page-content .direction-content {
+    padding-top:
+      clamp(25px, 5vh, 42px);
+  }
+
+  .third-page-content .direction-title {
+    width: 88%;
+
+    gap: 8px;
+
+    margin-bottom: 0;
+  }
+
+  .third-page-content .direction-line {
+    width:
+      clamp(20px, 7vw, 35px);
+  }
+
+  .third-page-content .direction-title-text {
+    font-size:
+      clamp(20px, 5vw, 26px);
+
+    letter-spacing: 1.5px;
+  }
+
+
+  /* ---------- UBICACIÓN ---------- */
+
+  .third-page-content .direction-location-row {
+    width: 88%;
+
+    gap: 9px;
+
+    margin-top: 3px;
+  }
+
+  .third-page-content .direction-image {
+    width: 48px;
+  }
+
+  .third-page-content .direction-place {
+    font-size:
+      clamp(17px, 4.5vw, 22px);
+
+    line-height: 1.08;
+
+    letter-spacing: 0.3px;
+  }
+
+
+  /* ---------- BOTÓN UBICACIÓN ---------- */
+
+  .third-page-content .location-link {
+    margin-top: 0;
+
+    padding:
+      7px 16px 8px;
+
+    font-size: 16px;
+
+    border-radius: 7px;
+  }
+
+
+  /* ---------- CONFIRMAR ---------- */
+
+  .third-page-content .arch-confirm {
+    bottom: 0;
+
+    left: 37%;
+
+    width: 58vw;
+
+    /*
+       Se reduce el efecto de la altura del dispositivo.
+       El arco blanco conserva mejor su proporción.
+    */
+    height:
+      clamp(175px, 42vw, 185px);
+
+    padding-top:
+      clamp(23px, 4vh, 40px);
+
+    border-radius:
+      50% 50% 18px 18px /
+      23% 23% 4% 4%;
+  }
+
+  .third-page-content .confirm-title {
+    width: 90%;
+
+    gap: 7px;
+
+    margin-bottom: 12px;
+  }
+
+  .third-page-content .confirm-line {
+    width:
+      clamp(16px, 6vw, 30px);
+  }
+
+  .third-page-content .confirm-title-text {
+    font-size:
+      clamp(16px, 4.2vw, 21px);
+
+    letter-spacing: 1px;
+
+    line-height: 1;
+  }
+
+  .third-page-content .confirm-message {
+    width: 82%;
+
+    font-size:
+      clamp(14px, 3.8vw, 18px);
+
+    line-height: 1.15;
+  }
+
+
+  /* ---------- BOTONES ---------- */
+
+  .third-page-content .confirm-buttons {
+    width: 92%;
+
+    gap: 7px;
+
+    margin-top: 0;
+  }
+
+  .third-page-content .confirm-button {
+    min-width: 92px;
+
+    padding:
+      6px 9px;
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   MÓVIL PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 370px) {
+
+  .third-page-content {
+    padding-top: 22px;
+
+    padding-bottom: 1.5dvh;
+
+    gap: 6px;
+  }
+
+
+  /* ---------- CONTADOR ---------- */
+
+  .third-page-content .countdown-subtitle {
+    font-size: 17px;
+  }
+
+  .third-page-content .countdown-item {
+    min-width: 36px;
+  }
+
+  .third-page-content .countdown-number {
+    font-size: 21px;
+  }
+
+  .third-page-content .countdown-label {
+    font-size: 7px;
+  }
+
+  .third-page-content .countdown-separator {
+    font-size: 19px;
+
+    margin-bottom: 9px;
+  }
+
+
+  /* ---------- ARCOS ---------- */
+
+  .third-page-content .arch-wrapper {
+    /*
+       Para pantallas pequeñas mantenemos
+       prácticamente el tamaño que ya funcionaba.
+    */
+    height:
+      clamp(320px, 90vw, 340px);
+
+    margin-top: 37px;
+  }
+
+  .third-page-content .arch-direction {
+    width: 70vw;
+  }
+
+
+  /* ---------- DIRECCIÓN ---------- */
+
+  .third-page-content .direction-content {
+    padding-top: 22px;
+  }
+
+  .third-page-content .direction-title {
+    gap: 6px;
+
+    margin-bottom: 0;
+  }
+
+  .third-page-content .direction-line {
+    width: 22px;
+  }
+
+  .third-page-content .direction-title-text {
+    font-size: 19px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .third-page-content .direction-location-row {
+    width: 90%;
+
+    gap: 7px;
+  }
+
+  .third-page-content .direction-image {
+    width: 42px;
+  }
+
+  .third-page-content .direction-place {
+    font-size: 17px;
+  }
+
+  .third-page-content .location-link {
+    margin-top: 0;
+
+    padding:
+      6px 14px 7px;
+
+    font-size: 15px;
+
+    border-radius: 7px;
+  }
+
+
+  /* ---------- CONFIRMAR ---------- */
+
+  .third-page-content .arch-confirm {
+    left: 36%;
+
+    width: 59vw;
+
+    height:
+      clamp(160px, 42vw, 175px);
+
+    padding-top: 21px;
+  }
+
+  .third-page-content .confirm-title {
+    gap: 5px;
+
+    margin-bottom: 10px;
+  }
+
+  .third-page-content .confirm-line {
+    width: 17px;
+  }
+
+  .third-page-content .confirm-title-text {
+    font-size: 15px;
+
+    letter-spacing: 0.8px;
+  }
+
+  .third-page-content .confirm-message {
+    width: 84%;
+
+    font-size: 13px;
+
+    line-height: 1.12;
+  }
+
+
+  /* ---------- BOTONES ---------- */
+
+  .third-page-content .confirm-buttons {
+    width: 94%;
+
+    gap: 5px;
+
+    margin-top: 0;
+  }
+
+  .third-page-content .confirm-button {
+    min-width: 82px;
+
+    padding:
+      5px 7px;
+
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   MÓVIL CON POCA ALTURA
+   ========================================================= */
+
+@media (max-height: 650px) and (max-width: 600px) {
+
+  .third-page-content {
+    padding-top: 18px;
+
+    padding-bottom: 1.5dvh;
+
+    gap: 5px;
+  }
+
+
+  /* ---------- CONTADOR ---------- */
+
+  .third-page-content .countdown-subtitle {
+    font-size: 17px;
+  }
+
+  .third-page-content .countdown-number {
+    font-size: 20px;
+  }
+
+  .third-page-content .countdown-label {
+    font-size: 7px;
+  }
+
+  .third-page-content .countdown-separator {
+    font-size: 19px;
+  }
+
+
+  /* ---------- ARCOS ---------- */
+
+  .third-page-content .arch-wrapper {
+    /*
+       En teléfonos bajos mantenemos el
+       diseño compacto.
+    */
+    height:
+      clamp(300px, 90vw, 340px);
+
+    margin-top: 5px;
+  }
+
+  .third-page-content .arch-direction {
+    width: 70vw;
+  }
+
+
+  /* ---------- DIRECCIÓN ---------- */
+
+  .third-page-content .direction-content {
+    padding-top: 20px;
+  }
+
+  .third-page-content .direction-title {
+    margin-bottom: 0;
+  }
+
+  .third-page-content .direction-title-text {
+    font-size: 19px;
+  }
+
+  .third-page-content .direction-location-row {
+    width: 90%;
+
+    gap: 6px;
+  }
+
+  .third-page-content .direction-image {
+    width: 40px;
+  }
+
+  .third-page-content .direction-place {
+    margin-top: 0;
+
+    font-size: 16px;
+
+    line-height: 1.05;
+  }
+
+
+  /* ---------- CONFIRMAR ---------- */
+
+  .third-page-content .arch-confirm {
+    height:
+      clamp(145px, 40vw, 170px);
+
+    padding-top: 19px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .third-page-content {
+    padding-bottom: 3dvh;
+
+    gap: 12px;
+  }
+
+
+  /* ---------- CONTADOR ---------- */
+
+  .third-page-content .countdown-subtitle {
+    font-size: 26px;
+  }
+
+  .third-page-content .countdown-number {
+    font-size: 35px;
+  }
+
+  .third-page-content .countdown-label {
+    font-size: 11px;
+  }
+
+
+  /* ---------- ARCOS ---------- */
+
+  .third-page-content .arch-wrapper {
+    width: 88vw;
+
+    height:
+      clamp(390px, 48dvh, 500px);
+
+    margin-top: 5px;
+  }
+
+  .third-page-content .arch-direction {
+    width: 68vw;
+
+    max-width: 560px;
+
+    height: 100%;
+  }
+
+
+  /* ---------- DIRECCIÓN ---------- */
+
+  .third-page-content .direction-content {
+    padding-top: 40px;
+  }
+
+  .third-page-content .direction-title {
+    margin-bottom: 0;
+  }
+
+  .third-page-content .direction-title-text {
+    font-size: 22px;
+  }
+
+  .third-page-content .direction-location-row {
+    width: 82%;
+
+    gap: 14px;
+  }
+
+  .third-page-content .direction-image {
+    width: 42px;
+  }
+
+  .third-page-content .direction-place {
+    font-size: 18px;
+
+    line-height: 1.1;
+  }
+
+
+  /* ---------- CONFIRMAR ---------- */
+
+  .third-page-content .arch-confirm {
+    left: 27%;
+
+    width: 48vw;
+
+    max-width: 390px;
+
+    height:
+      clamp(259px, 27dvh, 259px);
+
+    padding-top: 38px;
+  }
+
+  .third-page-content .confirm-title {
+    width: 90%;
+
+    gap: 12px;
+  }
+
+  .third-page-content .confirm-line {
+    width:
+      clamp(25px, 6vw, 50px);
+  }
+
+  .third-page-content .confirm-title-text {
+    font-size: 25px;
+  }
+
+  .third-page-content .confirm-message {
+    width: 82%;
+
+    font-size:
+      clamp(16px, 2.5vw, 21px);
+
+    line-height: 1.15;
+  }
+
+
+  /* ---------- BOTONES ---------- */
+
+  .third-page-content .confirm-buttons {
+    width: 90%;
+
+    gap: 10px;
+
+    margin-top: 0;
+  }
+
+  .third-page-content .confirm-button {
+    min-width: 105px;
+
+    padding:
+      7px 12px;
+
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  .third-page-section {
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+  }
+
+  .third-page-content {
+    padding-bottom: 3dvh;
+
+    gap: 12px;
+  }
+
+
+  /* ---------- CONTADOR ---------- */
+
+  .third-page-content .countdown-subtitle {
+    font-size: 28px;
+  }
+
+  .third-page-content .countdown-number {
+    font-size: 38px;
+  }
+
+
+  /* ---------- ARCOS ---------- */
+
+  .third-page-content .arch-wrapper {
+    width: 720px;
+
+    height:
+      clamp(430px, 50dvh, 540px);
+
+    margin-top: 37px;
+  }
+
+  .third-page-content .arch-direction {
+    width: 580px;
+
+    height: 100%;
+  }
+
+
+  /* ---------- DIRECCIÓN ---------- */
+
+  .third-page-content .direction-content {
+    padding-top: 50px;
+  }
+
+  .third-page-content .direction-title {
+    margin-bottom: 0;
+  }
+
+  .third-page-content .direction-title-text {
+    font-size: 24px;
+  }
+
+  .third-page-content .direction-location-row {
+    width: 80%;
+
+    gap: 18px;
+  }
+
+  .third-page-content .direction-image {
+    width: 42px;
+  }
+
+  .third-page-content .direction-place {
+    font-size: 18px;
+
+    line-height: 1.1;
+  }
+
+
+  /* ---------- CONFIRMAR ---------- */
+
+  .third-page-content .arch-confirm {
+    left: 39%;
+
+    width: 400px;
+
+    height:
+      clamp(215px, 25dvh, 270px);
+
+    padding-top: 42px;
+  }
+
+  .third-page-content .confirm-title {
+    width: 90%;
+
+    gap: 18px;
+  }
+
+  .third-page-content .confirm-line {
+    width: 55px;
+  }
+
+  .third-page-content .confirm-title-text {
+    font-size: 27px;
+  }
+
+  .third-page-content .confirm-message {
+    width: 82%;
+
+    font-size: 22px;
+
+    line-height: 1.2;
+  }
+
+
+  /* ---------- BOTONES ---------- */
+
+  .third-page-content .confirm-buttons {
+    width: 90%;
+
+    gap: 10px;
+
+    margin-top: 0;
+  }
+
+  .third-page-content .confirm-button {
+    min-width: 105px;
+
+    padding:
+      7px 12px;
+
+    font-size: 13px;
+  }
+
+}
+
+.regalo-image {
+  display: block;
+  width: clamp(220px, 55vw, 380px);
+  height: auto;
+  max-width: 85vw;
+  max-height: 55dvh;
+  object-fit: contain;
+  margin: 5px auto 0;
+
+  filter:
+    drop-shadow(
+      0 8px 18px
+      rgba(46, 104, 128, 0.15)
+    );
+
+  animation: regaloFloat 3s ease-in-out infinite;
+}
+
+@keyframes regaloFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   REGALO - MÓVIL
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .regalo-image {
+    width: clamp(220px, 62vw, 300px);
+    max-width: 82vw;
+    max-height: 48dvh;
+    margin-top: 5px;
+  }
+
+}
+
+
+/* =========================================================
+   REGALO - MÓVIL PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 370px) {
+
+  .regalo-image {
+    width: 220px;
+    max-width: 78vw;
+    max-height: 45dvh;
+  }
+
+}
+
+
+/* =========================================================
+   REGALO - MÓVIL CON POCA ALTURA
+   ========================================================= */
+
+@media (max-height: 650px) and (max-width: 600px) {
+
+  .regalo-image {
+    width: 220px;
+    max-width: 75vw;
+    max-height: 40dvh;
+  }
+
 }
