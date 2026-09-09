@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import bgFrame from "@/imports/WhatsApp_Image_2026-08-27_at_6.15.19_PM.jpeg";
 import oso2 from "@/imports/oso2.png";
-import eco from "@/imports/eco.png";
 import eco2 from "@/imports/eco2.png";
 import ubicacion from "@/imports/ubicacion.png";
 import regalo from "@/imports/regalo.png";
