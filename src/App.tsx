@@ -453,7 +453,7 @@ function App() {
               <div className="ultrasound-frame">
 
                 <img
-                  src={eco}
+                  src={eco2}
                   alt="Ecografía de Isaac"
                   className="ultrasound-image"
                 />
