@@ -1,5 +1,8 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Dancing+Script:wght@400;500;600&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
 
 :root {
   --blue-dark: #2e6880;
@@ -37,24 +40,18 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
-
   scroll-behavior: smooth;
-
   overflow-x: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
-
   width: 100%;
   min-height: 100%;
-
   background: var(--page);
   color: var(--text);
-
   font-family: "Nunito", sans-serif;
-
   overflow-x: hidden;
 }
 
@@ -74,40 +71,31 @@ img {
 .invitation {
   width: 100%;
   min-height: 100dvh;
-
   overflow-x: hidden;
 }
 
-
 /* =========================================================
    CONTENEDOR PRINCIPAL
-   Cada sección ocupa exactamente una pantalla
    ========================================================= */
 
 .invitation-content {
   width: 100%;
   height: 100dvh;
-
   overflow-y: auto;
   overflow-x: hidden;
-
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-
   -webkit-overflow-scrolling: touch;
 }
 
 .page-section {
   position: relative;
-
   width: 100%;
   height: 100dvh;
   min-height: 100dvh;
-
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
-
 
 /* =========================================================
    SECCIONES GENERALES
@@ -115,7 +103,6 @@ img {
 
 .section {
   position: relative;
-
   width: 100%;
   height: 100dvh;
   min-height: 100dvh;
@@ -133,7 +120,6 @@ img {
   position: relative;
 
   width: min(90vw, 650px);
-
   max-height: calc(100dvh - 70px);
 
   padding: 40px 35px;
@@ -147,8 +133,7 @@ img {
   box-shadow:
     0 18px 50px rgba(90, 143, 168, 0.12);
 
-  border:
-    1px solid rgba(184, 216, 234, 0.45);
+  border: 1px solid rgba(184, 216, 234, 0.45);
 
   display: flex;
   flex-direction: column;
@@ -158,11 +143,8 @@ img {
   overflow: hidden;
 }
 
-
 /* =========================================================
    INDICADOR "DESLIZA PARA CONTINUAR"
-   IMPORTANTE:
-   Debe estar fuera de .section-card
    ========================================================= */
 
 .fixed-scroll-indicator {
@@ -189,11 +171,9 @@ img {
   font-family: "Nunito", sans-serif;
 
   font-size: 12px;
-
   line-height: 1.2;
 
   text-align: center;
-
   white-space: nowrap;
 
   pointer-events: none;
@@ -207,13 +187,10 @@ img {
   display: block;
 
   font-size: 22px;
-
   line-height: 1;
 
-  animation:
-    arrowFloat 1.5s ease-in-out infinite;
+  animation: arrowFloat 1.5s ease-in-out infinite;
 }
-
 
 /* =========================================================
    SOBRE
@@ -280,27 +257,21 @@ img {
   align-items: center;
 
   text-align: center;
-
   line-height: 1;
 
   z-index: 5;
 
-  animation:
-    titleDrop 2.2s ease-out forwards;
+  animation: titleDrop 2.2s ease-out forwards;
 }
 
 .envelope-title-script {
-  font-family:
-    "Great Vibes",
-    cursive;
+  font-family: "Great Vibes", cursive;
 
   white-space: nowrap;
 
-  font-size:
-    clamp(58px, 13vw, 88px);
+  font-size: clamp(58px, 13vw, 88px);
 
   font-weight: 400;
-
   line-height: 0.85;
 
   color: var(--blue-primary);
@@ -310,17 +281,13 @@ img {
 }
 
 .envelope-title-shower {
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
-  font-size:
-    clamp(27px, 6vw, 38px);
+  font-size: clamp(27px, 6vw, 38px);
 
   font-weight: 600;
 
   letter-spacing: 10px;
-
   line-height: 1;
 
   margin-top: 14px;
@@ -344,12 +311,10 @@ img {
 
   filter:
     drop-shadow(
-      0 8px 12px
-      rgba(46, 104, 128, 0.16)
+      0 8px 12px rgba(46, 104, 128, 0.16)
     );
 
-  animation:
-    bearFloat 3s ease-in-out infinite;
+  animation: bearFloat 3s ease-in-out infinite;
 }
 
 .envelope {
@@ -365,12 +330,10 @@ img {
 
   border-radius: 18px;
 
-  border:
-    2px solid rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.9);
 
   box-shadow:
-    0 24px 60px
-    rgba(90, 143, 168, 0.30);
+    0 24px 60px rgba(90, 143, 168, 0.30);
 }
 
 .envelope-left {
@@ -383,11 +346,8 @@ img {
     clamp(110px, 28vw, 170px)
     solid var(--envelope-fold);
 
-  border-top:
-    100px solid transparent;
-
-  border-bottom:
-    100px solid transparent;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
 }
 
 .envelope-right {
@@ -400,11 +360,8 @@ img {
     clamp(110px, 28vw, 170px)
     solid var(--envelope-fold);
 
-  border-top:
-    100px solid transparent;
-
-  border-bottom:
-    100px solid transparent;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
 }
 
 .envelope-bottom {
@@ -457,11 +414,9 @@ img {
   left: 50%;
   top: 50%;
 
-  transform:
-    translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
-  width:
-    clamp(56px, 15vw, 70px);
+  width: clamp(56px, 15vw, 70px);
 
   aspect-ratio: 1;
 
@@ -485,14 +440,9 @@ img {
     2px solid rgba(248, 243, 235, 0.65);
 
   box-shadow:
-    0 5px 12px
-    rgba(90, 143, 168, 0.20),
-
-    inset 0 2px 3px
-    rgba(255, 255, 255, 0.28),
-
-    inset 0 -3px 5px
-    rgba(105, 75, 45, 0.20);
+    0 5px 12px rgba(90, 143, 168, 0.20),
+    inset 0 2px 3px rgba(255, 255, 255, 0.28),
+    inset 0 -3px 5px rgba(105, 75, 45, 0.20);
 
   z-index: 20;
 }
@@ -501,18 +451,15 @@ img {
   content: "";
 
   position: absolute;
-
   inset: 5px;
 
   border-radius: 50%;
 
   border:
-    1px solid
-    rgba(248, 243, 235, 0.55);
+    1px solid rgba(248, 243, 235, 0.55);
 
   box-shadow:
-    inset 0 0 4px
-    rgba(105, 75, 45, 0.15);
+    inset 0 0 4px rgba(105, 75, 45, 0.15);
 }
 
 .isaac-seal span {
@@ -524,8 +471,7 @@ img {
     "Cormorant Garamond",
     serif;
 
-  font-size:
-    clamp(40px, 9vw, 52px);
+  font-size: clamp(40px, 9vw, 52px);
 
   font-weight: 600;
 
@@ -534,8 +480,7 @@ img {
   color: #f8f3eb;
 
   text-shadow:
-    0 1px 1px
-    rgba(105, 75, 45, 0.20);
+    0 1px 1px rgba(105, 75, 45, 0.20);
 }
 
 .envelope-text {
@@ -551,8 +496,7 @@ img {
     "Dancing Script",
     cursive;
 
-  font-size:
-    clamp(1.5rem, 7vw, 2rem);
+  font-size: clamp(1.5rem, 7vw, 2rem);
 
   font-weight: 600;
 
@@ -560,17 +504,14 @@ img {
 }
 
 .envelope-text p {
-  margin:
-    6px 0 0;
+  margin: 6px 0 0;
 
-  font-size:
-    clamp(.65rem, 2.5vw, .8rem);
+  font-size: clamp(.65rem, 2.5vw, .8rem);
 
   color: var(--text-light);
 
   letter-spacing: .5px;
 }
-
 
 /* =========================================================
    PORTADA
@@ -616,7 +557,6 @@ img {
   z-index: 2;
 
   width: min(92vw, 650px);
-
   height: 100%;
 
   padding: 20px 25px;
@@ -673,8 +613,7 @@ img {
     "Great Vibes",
     cursive;
 
-  font-size:
-    clamp(64px, 11vw, 95px);
+  font-size: clamp(64px, 11vw, 95px);
 
   font-weight: 400;
 
@@ -683,8 +622,7 @@ img {
   color: var(--blue-primary);
 
   text-shadow:
-    0 3px 10px
-    rgba(90, 143, 168, 0.15);
+    0 3px 10px rgba(90, 143, 168, 0.15);
 }
 
 .cover-en-camino {
@@ -694,8 +632,7 @@ img {
     "Cormorant Garamond",
     serif;
 
-  font-size:
-    clamp(25px, 5vw, 36px);
+  font-size: clamp(25px, 5vw, 36px);
 
   font-weight: 500;
 
@@ -710,7 +647,6 @@ img {
   position: static;
 
   width: 145px;
-
   height: auto;
 
   flex: 0 0 145px;
@@ -723,8 +659,7 @@ img {
 
   filter:
     drop-shadow(
-      0 10px 15px
-      rgba(46, 104, 128, 0.16)
+      0 10px 15px rgba(46, 104, 128, 0.16)
     );
 
   animation:
@@ -738,8 +673,7 @@ img {
     "Cormorant Garamond",
     serif;
 
-  font-size:
-    clamp(45px, 8vw, 70px);
+  font-size: clamp(45px, 8vw, 70px);
 
   font-weight: 600;
 
@@ -751,15 +685,13 @@ img {
 .cover-message {
   max-width: 500px;
 
-  margin:
-    3px auto 5px;
+  margin: 3px auto 5px;
 
   font-family:
     "Cormorant Garamond",
     serif;
 
-  font-size:
-    clamp(16px, 2.5vw, 22px);
+  font-size: clamp(16px, 2.5vw, 22px);
 
   line-height: 1.25;
 
@@ -775,8 +707,7 @@ img {
     "Great Vibes",
     cursive;
 
-  font-size:
-    clamp(30px, 6vw, 45px);
+  font-size: clamp(30px, 6vw, 45px);
 
   color: var(--beige-dark);
 
@@ -785,21 +716,137 @@ img {
 }
 
 .cover-bear {
-  width:
-    clamp(125px, 22vw, 180px);
+  width: clamp(125px, 22vw, 180px);
 
   margin-top: 5px;
 
   filter:
     drop-shadow(
-      0 10px 15px
-      rgba(46,104,128,.16)
+      0 10px 15px rgba(46,104,128,.16)
     );
 
   animation:
     bearFloat 3s ease-in-out infinite;
 }
 
+/* =========================================================
+   SEGUNDA PORTADA
+   ========================================================= */
+
+.second-cover-content {
+  width: 100%;
+  height: 100%;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  gap: clamp(8px, 2vh, 18px);
+}
+
+.second-cover-content .cover-heading {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  margin: 0;
+}
+
+.second-cover-content .cover-title-row {
+  width: 100%;
+  min-height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-cover-content .cover-title-text {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+}
+
+.second-cover-content .cover-name {
+  width: 100%;
+
+  margin: 0;
+
+  text-align: center;
+}
+
+/* =========================================================
+   ECOGRAFÍA DE LA SEGUNDA PORTADA
+   ========================================================= */
+
+.second-cover-content .second-cover-eco {
+  display: block;
+
+  /*
+     El tamaño se basa principalmente en el ancho.
+     Esto evita que en un teléfono alto la imagen
+     se vea demasiado pequeña.
+  */
+  width: clamp(240px, 62vw, 380px);
+
+  height: auto;
+
+  max-width: 90vw;
+
+  /*
+     Límite de seguridad para teléfonos bajos.
+  */
+  max-height: 42dvh;
+
+  object-fit: contain;
+
+  margin: 0 auto;
+
+  border-radius: 18px;
+
+  filter:
+    drop-shadow(
+      0 10px 20px rgba(46, 104, 128, 0.18)
+    );
+}
+
+/* =========================================================
+   IMAGEN FECHAS
+   ========================================================= */
+
+.second-cover-content .fechas-image {
+  display: block;
+
+  width: clamp(300px, 78vw, 500px);
+
+  height: auto;
+
+  max-width: 94vw;
+
+  max-height: 38dvh;
+
+  object-fit: contain;
+
+  margin: 0 auto;
+
+  filter:
+    drop-shadow(
+      0 8px 15px rgba(46, 104, 128, 0.12)
+    );
+}
 
 /* =========================================================
    MENSAJE
@@ -829,15 +876,13 @@ img {
 }
 
 .message-script {
-  margin:
-    0 0 12px;
+  margin: 0 0 12px;
 
   font-family:
     "Great Vibes",
     cursive;
 
-  font-size:
-    clamp(27px, 5vh, 42px);
+  font-size: clamp(27px, 5vh, 42px);
 
   line-height: 1.05;
 
@@ -847,25 +892,21 @@ img {
 .invitation-message p:not(.message-script) {
   max-width: 540px;
 
-  margin:
-    7px auto;
+  margin: 7px auto;
 
   line-height: 1.45;
 
-  font-size:
-    clamp(15px, 2.2vh, 19px);
+  font-size: clamp(15px, 2.2vh, 19px);
 }
 
 .baby-name {
-  margin:
-    8px 0;
+  margin: 8px 0;
 
   font-family:
     "Great Vibes",
     cursive;
 
-  font-size:
-    clamp(45px, 7vh, 65px);
+  font-size: clamp(45px, 7vh, 65px);
 
   font-weight: 400;
 
@@ -875,14 +916,12 @@ img {
 }
 
 .small-divider {
-  margin:
-    8px 0;
+  margin: 8px 0;
 
   color: var(--blue-medium);
 
   font-size: 20px;
 }
-
 
 /* =========================================================
    TÍTULOS
@@ -903,8 +942,7 @@ img {
     "Cormorant Garamond",
     serif;
 
-  font-size:
-    clamp(30px, 5vw, 42px);
+  font-size: clamp(30px, 5vw, 42px);
 
   font-weight: 600;
 
@@ -914,15 +952,13 @@ img {
 .section-subtitle {
   max-width: 500px;
 
-  margin:
-    8px auto 20px;
+  margin: 8px auto 20px;
 
   font-family:
     "Cormorant Garamond",
     serif;
 
-  font-size:
-    clamp(18px, 3vw, 23px);
+  font-size: clamp(18px, 3vw, 23px);
 
   font-style: italic;
 
@@ -930,7 +966,6 @@ img {
 
   color: var(--text-light);
 }
-
 
 /* =========================================================
    EVENTO
@@ -942,13 +977,11 @@ img {
 
 .event-details {
   display: flex;
-
   flex-direction: column;
 
   gap: 14px;
 
   width: 100%;
-
   max-width: 480px;
 
   margin: 0 auto;
@@ -956,23 +989,20 @@ img {
 
 .event-detail {
   display: flex;
-
   align-items: center;
 
   gap: 15px;
 
   text-align: left;
 
-  padding:
-    14px 18px;
+  padding: 14px 18px;
 
   background: #f8fcfe;
 
   border-radius: 18px;
 
   border:
-    1px solid
-    var(--blue-very-light);
+    1px solid var(--blue-very-light);
 }
 
 .detail-icon {
@@ -996,7 +1026,6 @@ img {
 
 .event-detail div:last-child {
   display: flex;
-
   flex-direction: column;
 
   gap: 3px;
@@ -1022,7 +1051,6 @@ img {
   color: var(--blue-dark);
 }
 
-
 /* =========================================================
    ECOGRAFÍA
    ========================================================= */
@@ -1037,15 +1065,13 @@ img {
 }
 
 .ultrasound-name {
-  margin:
-    -8px 0 12px;
+  margin: -8px 0 12px;
 
   font-family:
     "Great Vibes",
     cursive;
 
-  font-size:
-    clamp(45px, 8vh, 65px);
+  font-size: clamp(45px, 8vh, 65px);
 
   font-weight: 400;
 
@@ -1053,8 +1079,7 @@ img {
 }
 
 .ultrasound-frame {
-  width:
-    min(100%, 400px);
+  width: min(100%, 400px);
 
   max-height: 45dvh;
 
@@ -1067,8 +1092,7 @@ img {
   border-radius: 20px;
 
   box-shadow:
-    0 12px 30px
-    rgba(90, 143, 168, .12);
+    0 12px 30px rgba(90, 143, 168, .12);
 
   overflow: hidden;
 }
@@ -1086,8 +1110,7 @@ img {
 }
 
 .ultrasound-message {
-  margin:
-    12px auto 0;
+  margin: 12px auto 0;
 
   font-family:
     "Cormorant Garamond",
@@ -1099,7 +1122,6 @@ img {
 
   color: var(--text);
 }
-
 
 /* =========================================================
    CUENTA REGRESIVA
@@ -1116,15 +1138,13 @@ img {
     "Cormorant Garamond",
     serif;
 
-  font-size:
-    clamp(32px, 7vw, 44px);
+  font-size: clamp(32px, 7vw, 44px);
 
   color: var(--blue-dark);
 }
 
 .countdown-subtitle {
-  margin:
-    8px 0 25px;
+  margin: 8px 0 25px;
 
   font-family:
     "Cormorant Garamond",
@@ -1143,21 +1163,18 @@ img {
   align-items: center;
   justify-content: center;
 
-  gap:
-    clamp(3px, 1.5vw, 12px);
+  gap: clamp(3px, 1.5vw, 12px);
 
   flex-wrap: nowrap;
 }
 
 .countdown-item {
   display: flex;
-
   flex-direction: column;
 
   align-items: center;
 
-  min-width:
-    clamp(48px, 11vw, 80px);
+  min-width: clamp(48px, 11vw, 80px);
 }
 
 .countdown-number {
@@ -1165,8 +1182,7 @@ img {
     "Cormorant Garamond",
     serif;
 
-  font-size:
-    clamp(32px, 7vw, 50px);
+  font-size: clamp(32px, 7vw, 50px);
 
   font-weight: 600;
 
@@ -1178,8 +1194,7 @@ img {
 .countdown-label {
   margin-top: 5px;
 
-  font-size:
-    clamp(8px, 1.8vw, 12px);
+  font-size: clamp(8px, 1.8vw, 12px);
 
   text-transform: uppercase;
 
@@ -1193,12 +1208,10 @@ img {
 
   margin-top: 4px;
 
-  font-size:
-    clamp(20px, 5vw, 35px);
+  font-size: clamp(20px, 5vw, 35px);
 
   color: var(--blue-light);
 }
-
 
 /* =========================================================
    UBICACIÓN
@@ -1210,7 +1223,6 @@ img {
 
 .location-card {
   width: 100%;
-
   max-width: 520px;
 
   overflow: hidden;
@@ -1220,23 +1232,20 @@ img {
   background: white;
 
   box-shadow:
-    0 15px 35px
-    rgba(90, 143, 168, .13);
+    0 15px 35px rgba(90, 143, 168, .13);
 }
 
 .location-image {
   display: block;
 
   width: 100%;
-
   height: 190px;
 
   object-fit: cover;
 }
 
 .location-info {
-  padding:
-    16px 20px 20px;
+  padding: 16px 20px 20px;
 }
 
 .location-icon {
@@ -1260,8 +1269,7 @@ img {
 }
 
 .location-info p {
-  margin:
-    4px 0 12px;
+  margin: 4px 0 12px;
 
   color: var(--text-light);
 }
@@ -1270,8 +1278,7 @@ img {
 .gift-button {
   border: none;
 
-  padding:
-    11px 24px;
+  padding: 11px 24px;
 
   border-radius: 30px;
 
@@ -1293,14 +1300,11 @@ img {
 .gift-button:hover {
   background: var(--blue-dark);
 
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 
   box-shadow:
-    0 8px 20px
-    rgba(46, 104, 128, .22);
+    0 8px 20px rgba(46, 104, 128, .22);
 }
-
 
 /* =========================================================
    REGALOS
@@ -1312,11 +1316,9 @@ img {
 
 .gift-card {
   width: 100%;
-
   max-width: 520px;
 
   display: flex;
-
   flex-direction: column;
 
   overflow: hidden;
@@ -1326,21 +1328,18 @@ img {
   background: white;
 
   box-shadow:
-    0 15px 35px
-    rgba(90, 143, 168, .13);
+    0 15px 35px rgba(90, 143, 168, .13);
 }
 
 .gift-image {
   width: 100%;
-
   height: 190px;
 
   object-fit: cover;
 }
 
 .gift-info {
-  padding:
-    16px 20px 20px;
+  padding: 16px 20px 20px;
 }
 
 .gift-icon {
@@ -1352,8 +1351,7 @@ img {
 }
 
 .gift-info h3 {
-  margin:
-    0 0 8px;
+  margin: 0 0 8px;
 
   font-family:
     "Cormorant Garamond",
@@ -1367,14 +1365,12 @@ img {
 .gift-info p {
   max-width: 430px;
 
-  margin:
-    0 auto 14px;
+  margin: 0 auto 14px;
 
   line-height: 1.45;
 
   color: var(--text-light);
 }
-
 
 /* =========================================================
    FINAL
@@ -1399,22 +1395,19 @@ img {
   text-align: center;
 
   display: flex;
-
   flex-direction: column;
 
   align-items: center;
 }
 
 .final-bear {
-  width:
-    min(190px, 42vw);
+  width: min(190px, 42vw);
 
   margin-bottom: 8px;
 
   filter:
     drop-shadow(
-      0 10px 15px
-      rgba(46,104,128,.16)
+      0 10px 15px rgba(46,104,128,.16)
     );
 
   animation:
@@ -1428,8 +1421,7 @@ img {
     "Great Vibes",
     cursive;
 
-  font-size:
-    clamp(48px, 8vw, 70px);
+  font-size: clamp(48px, 8vw, 70px);
 
   font-weight: 400;
 
@@ -1439,8 +1431,7 @@ img {
 .final-card p {
   max-width: 400px;
 
-  margin:
-    10px auto;
+  margin: 10px auto;
 
   font-family:
     "Cormorant Garamond",
@@ -1454,8 +1445,7 @@ img {
 }
 
 .final-hearts {
-  margin:
-    10px 0;
+  margin: 10px 0;
 
   color: var(--blue-medium);
 
@@ -1476,7 +1466,6 @@ img {
   color: var(--beige-dark);
 }
 
-
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -1488,7 +1477,6 @@ img {
   min-height: 100dvh;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -1498,8 +1486,7 @@ img {
 
   background: var(--blue-dark);
 
-  color:
-    rgba(255,255,255,.85);
+  color: rgba(255,255,255,.85);
 
   font-family:
     "Cormorant Garamond",
@@ -1508,13 +1495,11 @@ img {
   font-size: 18px;
 }
 
-
 /* =========================================================
    ANIMACIONES
    ========================================================= */
 
 @keyframes bearFloat {
-
   0%,
   100% {
     transform:
@@ -1530,7 +1515,6 @@ img {
 }
 
 @keyframes arrowFloat {
-
   0%,
   100% {
     transform:
@@ -1544,7 +1528,6 @@ img {
 }
 
 @keyframes titleDrop {
-
   0% {
     opacity: 0;
 
@@ -1567,9 +1550,8 @@ img {
   }
 }
 
-
 /* =========================================================
-   CELULAR
+   CELULARES
    ========================================================= */
 
 @media (max-width: 600px) {
@@ -1594,7 +1576,6 @@ img {
     border-radius: 25px;
   }
 
-
   /* -------------------------------------------------------
      INDICADOR
      ------------------------------------------------------- */
@@ -1615,7 +1596,6 @@ img {
 
     line-height: 1;
   }
-
 
   /* -------------------------------------------------------
      SOBRE
@@ -1652,7 +1632,6 @@ img {
     width: 155px;
 
     right: -5px;
-
     bottom: -15px;
   }
 
@@ -1663,7 +1642,6 @@ img {
   .envelope-text h2 {
     font-size: 28px;
   }
-
 
   /* -------------------------------------------------------
      PORTADA
@@ -1716,11 +1694,9 @@ img {
     bottom: auto;
 
     width: 105px;
-
     height: auto;
 
-    flex:
-      0 0 105px;
+    flex: 0 0 105px;
 
     order: 1;
 
@@ -1786,7 +1762,6 @@ img {
     font-size: 42px;
 
     margin-top: 0;
-
     margin-bottom: 3px;
   }
 
@@ -1796,6 +1771,88 @@ img {
     margin-top: 3px;
   }
 
+  /* -------------------------------------------------------
+     SEGUNDA PORTADA
+     ------------------------------------------------------- */
+
+  .second-cover-content {
+    width: 100%;
+    height: 100%;
+
+    padding:
+      10px 8px 45px;
+
+    /*
+       Mantiene las imágenes centradas y grandes.
+    */
+    gap: 10px;
+
+    justify-content: center;
+  }
+
+  .second-cover-content .cover-heading {
+    margin: 0;
+  }
+
+  .second-cover-content .cover-title-row {
+    min-height: auto;
+
+    width: 100%;
+  }
+
+  .second-cover-content .cover-title-text {
+    width: 100%;
+
+    margin: 0;
+  }
+
+  /*
+     ECOGRAFÍA:
+     375px → aproximadamente 240px
+     430px → aproximadamente 267px
+  */
+
+  .second-cover-content .second-cover-eco {
+    width: clamp(
+      240px,
+      62vw,
+      300px
+    );
+
+    max-width: 88vw;
+
+    height: auto;
+
+    max-height: 42dvh;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+  }
+
+  /*
+     FECHAS:
+     375px → aproximadamente 293px
+     430px → aproximadamente 335px
+  */
+
+  .second-cover-content .fechas-image {
+    width: clamp(
+      290px,
+      78vw,
+      360px
+    );
+
+    max-width: 94vw;
+
+    height: auto;
+
+    max-height: 50dvh;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+  }
 
   /* -------------------------------------------------------
      MENSAJE
@@ -1831,7 +1888,6 @@ img {
       6px 0;
   }
 
-
   /* -------------------------------------------------------
      TÍTULOS
      ------------------------------------------------------- */
@@ -1846,7 +1902,6 @@ img {
 
     margin-bottom: 15px;
   }
-
 
   /* -------------------------------------------------------
      EVENTO
@@ -1873,7 +1928,6 @@ img {
   .event-detail strong {
     font-size: 19px;
   }
-
 
   /* -------------------------------------------------------
      ECOGRAFÍA
@@ -1903,7 +1957,6 @@ img {
 
     margin-top: 8px;
   }
-
 
   /* -------------------------------------------------------
      COUNTDOWN
@@ -1939,7 +1992,6 @@ img {
     margin-bottom: 20px;
   }
 
-
   /* -------------------------------------------------------
      UBICACIÓN
      ------------------------------------------------------- */
@@ -1956,7 +2008,6 @@ img {
   .location-info h3 {
     font-size: 22px;
   }
-
 
   /* -------------------------------------------------------
      REGALOS
@@ -1980,7 +2031,6 @@ img {
 
     margin-bottom: 10px;
   }
-
 
   /* -------------------------------------------------------
      FINAL
@@ -2010,9 +2060,9 @@ img {
   }
 }
 
-
 /* =========================================================
    CELULARES MUY PEQUEÑOS
+   Ejemplo: 360 x 640
    ========================================================= */
 
 @media (max-width: 370px) {
@@ -2032,8 +2082,9 @@ img {
       20px 16px;
   }
 
-
-  /* SOBRE */
+  /* -------------------------------------------------------
+     SOBRE
+     ------------------------------------------------------- */
 
   .envelope-title-script {
     font-size: 52px;
@@ -2049,7 +2100,6 @@ img {
     width: 135px;
 
     right: 0;
-
     bottom: -10px;
   }
 
@@ -2057,8 +2107,9 @@ img {
     font-size: 25px;
   }
 
-
-  /* PORTADA */
+  /* -------------------------------------------------------
+     PORTADA
+     ------------------------------------------------------- */
 
   .cover-heading-bear {
     width: 95px;
@@ -2098,8 +2149,41 @@ img {
     width: 110px;
   }
 
+  /* -------------------------------------------------------
+     SEGUNDA PORTADA
+     ------------------------------------------------------- */
 
-  /* MENSAJE */
+  .second-cover-content {
+    padding:
+      8px 5px 42px;
+
+    gap: 7px;
+  }
+
+  /*
+     En pantallas de 360px o menos
+     reducimos ligeramente para evitar cortes.
+  */
+
+  .second-cover-content .second-cover-eco {
+    width: 240px;
+
+    max-width: 82vw;
+
+    max-height: 39dvh;
+  }
+
+  .second-cover-content .fechas-image {
+    width: 290px;
+
+    max-width: 92vw;
+
+    max-height: 33dvh;
+  }
+
+  /* -------------------------------------------------------
+     MENSAJE
+     ------------------------------------------------------- */
 
   .message-script {
     font-size: 25px;
@@ -2113,8 +2197,9 @@ img {
     font-size: 43px;
   }
 
-
-  /* COUNTDOWN */
+  /* -------------------------------------------------------
+     COUNTDOWN
+     ------------------------------------------------------- */
 
   .countdown-number {
     font-size: 27px;
@@ -2124,16 +2209,18 @@ img {
     font-size: 8px;
   }
 
-
-  /* IMÁGENES */
+  /* -------------------------------------------------------
+     IMÁGENES
+     ------------------------------------------------------- */
 
   .location-image,
   .gift-image {
     height: 135px;
   }
 
-
-  /* INDICADOR */
+  /* -------------------------------------------------------
+     INDICADOR
+     ------------------------------------------------------- */
 
   .fixed-scroll-indicator {
     bottom:
@@ -2146,7 +2233,6 @@ img {
     font-size: 17px;
   }
 }
-
 
 /* =========================================================
    PANTALLAS CON POCA ALTURA
@@ -2166,8 +2252,9 @@ img {
     padding: 20px;
   }
 
-
-  /* PORTADA */
+  /* -------------------------------------------------------
+     PORTADA
+     ------------------------------------------------------- */
 
   .cover-content {
     padding:
@@ -2221,8 +2308,41 @@ img {
     margin-top: 2px;
   }
 
+  /* -------------------------------------------------------
+     SEGUNDA PORTADA
+     ------------------------------------------------------- */
 
-  /* MENSAJE */
+  .second-cover-content {
+    padding:
+      5px 8px 40px;
+
+    gap: 5px;
+  }
+
+  /*
+     Solo reducimos la ALTURA máxima.
+     El ancho sigue siendo suficientemente grande.
+  */
+
+  .second-cover-content .second-cover-eco {
+    width: 240px;
+
+    max-width: 70vw;
+
+    max-height: 36dvh;
+  }
+
+  .second-cover-content .fechas-image {
+    width: 290px;
+
+    max-width: 84vw;
+
+    max-height: 30dvh;
+  }
+
+  /* -------------------------------------------------------
+     MENSAJE
+     ------------------------------------------------------- */
 
   .message-script {
     font-size: 27px;
@@ -2241,8 +2361,9 @@ img {
       4px 0;
   }
 
-
-  /* ECOGRAFÍA */
+  /* -------------------------------------------------------
+     ECOGRAFÍA
+     ------------------------------------------------------- */
 
   .ultrasound-frame {
     max-height: 34dvh;
@@ -2252,16 +2373,18 @@ img {
     max-height: 30dvh;
   }
 
-
-  /* IMÁGENES */
+  /* -------------------------------------------------------
+     IMÁGENES
+     ------------------------------------------------------- */
 
   .location-image,
   .gift-image {
     height: 125px;
   }
 
-
-  /* INDICADOR */
+  /* -------------------------------------------------------
+     INDICADOR
+     ------------------------------------------------------- */
 
   .fixed-scroll-indicator {
     bottom: 8px;
@@ -2275,7 +2398,6 @@ img {
     font-size: 17px;
   }
 }
-
 
 /* =========================================================
    ESCRITORIO
@@ -2303,7 +2425,6 @@ img {
     position: static;
 
     width: 150px;
-
     height: auto;
 
     flex:
@@ -2324,7 +2445,6 @@ img {
     margin: 0;
 
     display: flex;
-
     flex-direction: column;
 
     align-items: center;
@@ -2357,8 +2477,41 @@ img {
   .fixed-scroll-indicator .scroll-arrow {
     font-size: 22px;
   }
-}
 
+  /* -------------------------------------------------------
+     SEGUNDA PORTADA
+     ------------------------------------------------------- */
+
+  .second-cover-content {
+    gap: 18px;
+
+    padding: 20px;
+  }
+
+  .second-cover-content .second-cover-eco {
+    width: clamp(
+      300px,
+      32vw,
+      380px
+    );
+
+    max-width: 380px;
+
+    max-height: 50dvh;
+  }
+
+  .second-cover-content .fechas-image {
+    width: clamp(
+      400px,
+      55vw,
+      520px
+    );
+
+    max-width: 520px;
+
+    max-height: 48dvh;
+  }
+}
 
 /* =========================================================
    ESCRITORIO GRANDE
@@ -2376,190 +2529,4 @@ img {
     padding:
       40px 50px;
   }
-}
-
-/* =====================================================
-   SEGUNDA PORTADA
-   ===================================================== */
-
-.second-cover-eco {
-  width: min(65vw, 330px);
-  max-height: 35vh;
-  object-fit: contain;
-  margin: 10px auto 0;
-  border-radius: 18px;
-  filter: drop-shadow(0 10px 20px rgba(46, 104, 128, 0.18));
-}
-
-.second-cover-message {
-  margin: 14px 0 16px;
-}
-
-/* =====================================================
-   DISEÑO DE FECHA
-   ===================================================== */
-
-.date-design {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  width: min(90vw, 520px);
-  margin: 4px auto 0;
-  color: var(--blue-dark);
-}
-
-.date-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 105px;
-  text-align: center;
-}
-
-.date-day,
-.date-month {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(17px, 2.5vw, 22px);
-  font-weight: 600;
-  letter-spacing: 2px;
-  line-height: 1.1;
-}
-
-.date-time,
-.date-year {
-  font-family: "Nunito", sans-serif;
-  font-size: clamp(12px, 1.8vw, 15px);
-  color: var(--text-light);
-  margin-top: 4px;
-  letter-spacing: 1px;
-}
-
-.date-number {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(65px, 9vw, 90px);
-  font-weight: 500;
-  line-height: 0.8;
-  color: var(--blue-dark);
-  min-width: 65px;
-  text-align: center;
-  transform: translateY(-18px);
-}
-
-.date-line {
-  width: 1px;
-  height: 65px;
-  background: rgba(90, 143, 168, 0.45);
-  flex-shrink: 0;
-}
-
-@media (max-width: 600px) {
-
-  .second-cover-eco {
-    width: min(70vw, 280px);
-    max-height: 32vh;
-    margin-top: 8px;
-  }
-
-  .second-cover-message {
-    margin: 10px 0 14px;
-  }
-
-  .date-design {
-    gap: 10px;
-    width: 94vw;
-  }
-
-  .date-block {
-    min-width: 78px;
-  }
-
-  .date-day,
-  .date-month {
-    font-size: 16px;
-    letter-spacing: 1.3px;
-  }
-
-  .date-time,
-  .date-year {
-    font-size: 11px;
-    margin-top: 3px;
-  }
-
-  .date-number {
-    font-size: 65px;
-    min-width: 48px;
-  }
-
-  .date-line {
-    height: 55px;
-  }
-}
-
-/* =====================================================
-   CENTRADO DE LA SEGUNDA PORTADA
-   ===================================================== */
-
-.second-cover-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.second-cover-content .cover-heading {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.second-cover-content .cover-title-row {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.second-cover-content .cover-title-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0 ;
-}
-
-.second-cover-content .cover-name {
-  text-align: center;
-  width: 100%;
-}
-
-.second-cover-content .second-cover-eco {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* =====================================================
-   CALENDARIO OCTUBRE
-   ===================================================== */
-
-.october-calendar {
-  display: block;
-  width: min(58vw, 300px);
-  max-height: 23vh;
-  object-fit: contain;
-  margin: 18px auto 0;
-  filter: drop-shadow(0 8px 15px rgba(46, 104, 128, 0.12));
-}
-
-@media (max-width: 600px) {
-
-  .october-calendar {
-    width: min(62vw, 250px);
-    max-height: 21vh;
-    margin-top: 14px;
-  }
-
 }

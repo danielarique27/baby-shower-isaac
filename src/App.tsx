@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import bgFrame from "@/imports/WhatsApp_Image_2026-08-27_at_6.15.19_PM.jpeg";
 import oso2 from "@/imports/oso2.png";
 import eco from "@/imports/eco.png";
+import eco2 from "@/imports/eco2.png";
 import ubicacion from "@/imports/ubicacion.png";
 import regalo from "@/imports/regalo.png";
-import octubre from "@/imports/octubre.png";
+import fechas from "@/imports/fechas.png";
 import "./App.css";
 
 function App() {
@@ -76,12 +77,12 @@ function App() {
     setOpened(true);
 
     if (!audioRef.current) {
-        audioRef.current = new Audio(
+      /*   audioRef.current = new Audio(
            "/music/indigo.mp3"
          );
    
          audioRef.current.loop = true;
-         audioRef.current.volume = 0.45; 
+         audioRef.current.volume = 0.45;  */
     }
 
     audioRef.current.play().catch(() => {
@@ -267,12 +268,8 @@ function App() {
 
                   <div className="cover-title-text">
 
-                    <div className="cover-name">
-                      ISAAC
-                    </div>
-
                     <img
-                      src={eco}
+                      src={eco2}
                       alt="Ecografía de Isaac"
                       className="second-cover-eco"
                     />
@@ -284,54 +281,18 @@ function App() {
 
               </div>
 
-              <p className="cover-message beige">
-                Acompañanos el día
-              </p>
+              <img
+                src={fechas}
+                alt="Fecha del Baby Shower de Isaac"
+                className="fechas-image"
+              />
 
-              <div className="date-design">
 
-              <div className="date-block">
-                <span className="date-day">
-                  DOMINGO
-                </span>
 
-                <span className="date-time">
-                  4:00 PM
-                </span>
-              </div>
-
-              <div className="date-line" />
-
-              <div className="date-number">
-                4
-              </div>
-
-              <div className="date-line" />
-
-              <div className="date-block">
-                <span className="date-month">
-                  OCTUBRE
-                </span>
-
-                <span className="date-year">
-                  2026
-                </span>
-              </div>
-
-            </div>
-
-                      <img
-            src={octubre}
-            alt="Calendario de octubre de 2026"
-            className="october-calendar"
-          />
-
-           
-
-              <div className="fixed-scroll-indicator">
+             {/*  <div className="fixed-scroll-indicator">
                 <span>Desliza para continuar</span>
                 <span className="scroll-arrow">↓</span>
-              </div>
+              </div> */}
 
             </div>
 
