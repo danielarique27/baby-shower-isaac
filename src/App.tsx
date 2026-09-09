@@ -269,7 +269,7 @@ function App() {
 
                     <img
                       src={eco2}
-                      alt="Ecografía de Isaac"
+                      alt="Ecografía de Isaac."
                       className="second-cover-eco"
                     />
                   </div>
