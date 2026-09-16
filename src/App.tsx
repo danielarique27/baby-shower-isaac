@@ -19,7 +19,7 @@ function App() {
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const eventDate = new Date("2026-10-04T16:00:00-05:00");
+  const eventDate = new Date("2026-10-11T15:30:00-05:00");
 
   useEffect(() => {
     const updateCountdown = () => {
@@ -76,17 +76,17 @@ function App() {
     setOpened(true);
 
     if (!audioRef.current) {
-      /* audioRef.current = new Audio(
+       audioRef.current = new Audio(
         "/music/indigo.mp3"
       );
 
       audioRef.current.loop = true;
-      audioRef.current.volume = 0.45; */
+      audioRef.current.volume = 0.45; 
     }
 
-    /*  audioRef.current.play().catch(() => {
+      audioRef.current.play().catch(() => {
        // El navegador puede bloquear el audio.
-     }); */
+     }); 
   };
 
   const abrirUbicacion = () => {
@@ -98,7 +98,7 @@ function App() {
 
   const abrirRegalos = () => {
     window.open(
-      "https://app.mywishlist.co/lizethlmacias",
+      "https://app.mywishlist.co/lizethlmaciasp/baby-shower",
       "_blank"
     );
   };
@@ -450,7 +450,7 @@ function App() {
                   <div className="confirm-buttons">
 
                     <a
-                        href="https://wa.me/3166996063?text=Hola%2C%20quiero%20confirmar%20mi%20asistencia%20al%20Baby%20Shower%20de%20Isaac."
+                        href="https://w.app/n7tung"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="confirm-button"
@@ -459,7 +459,7 @@ function App() {
                     </a>
 
                     <a
-                      href="https://wa.me/TUNUMEROPAPA"
+                      href="https://w.app/sb5afi"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="confirm-button"
@@ -498,15 +498,18 @@ function App() {
                 className="regalo-image"
               />
                <div className="gift-info">
-
+                  <p>
+                    Su compañía en este día tan especial será el regalo más bonito para nosotros. 
+                    Sin embargo, si deseas tener un detalle para ISAAC, hemos diseñado una:
+                  </p>
                   <h3>
                     Lista de regalos
                   </h3>
 
+
                   <p>
-                    Si deseas obsequiarnos algo
-                    para Isaac, hemos preparado
-                    una lista con algunas ideas.
+                    Tu detalle será único y especial. Si eliges algo de la lista, por favor, márcalo para evitar que se repita. 
+                    Si ya aparece como entregado, significa que alguien más ya lo seleccionó.
                   </p>
 
                   <button

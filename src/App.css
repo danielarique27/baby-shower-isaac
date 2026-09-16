@@ -1326,7 +1326,7 @@ img {
 }
 
 .gift-info h3 {
-  margin: 0 0 8px;
+  margin: 20px 0;
 
   font-family:
     "Cormorant Garamond",
@@ -1994,9 +1994,9 @@ img {
   }
 
   .gift-info p {
-    font-size: 13px;
+    font-size: 14px;
 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   /* -------------------------------------------------------
