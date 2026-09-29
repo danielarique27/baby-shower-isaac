@@ -449,17 +449,17 @@ function App() {
 
                   <div className="confirm-buttons">
 
-                    <a
-                        href="https://w.app/n7tung"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="confirm-button"
-                    >
-                      CONFIRMAR A MAMÁ
-                    </a>
+                  <a
+                    href="https://wa.me/573102819618?text=Hola%2C%20quiero%20confirmar%20mi%20asistencia%20al%20baby%20shower%20de%20Isaac"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="confirm-button"
+                  >
+                    CONFIRMAR A MAMÁ
+                  </a>
 
                     <a
-                      href="https://w.app/sb5afi"
+                     href="https://wa.me/573155093371?text=Hola%2C%20quiero%20confirmar%20mi%20asistencia%20al%20baby%20shower%20de%20Isaac"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="confirm-button"
